@@ -6,10 +6,25 @@ body {
 }
 
 header {
-  background: #111;
+  background: url("assets/IMG_8618.jpeg") center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 60px 20px;
+  padding: 120px 20px;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+header h1,
+header p,
+header a {
+  position: relative;
+  z-index: 1;
 }
 
 header h1 {
