@@ -423,24 +423,16 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   object-fit:cover;
   display:block;
 }
-/* --- Fix image cards inside .cards --- */
+/* --- Photo sizing (safe version) --- */
 
-.cards{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;        /* optional: match gallery */
-  margin-top: 16px; /* optional: match earlier rule */
-}
-
-.cards .card{
-  padding: 0;              /* remove the shrinking effect */
-  overflow: hidden;
+/* Only control the images, not the card containers */
+.cards img{
+  width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
-
-.cards .card img{
-  width:100%;
-  height:100%;
   object-fit:cover;
   display:block;
 }
