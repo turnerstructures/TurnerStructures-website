@@ -401,11 +401,44 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
  
 /* --- Gallery image sizing fix --- */
 
+/* Make the gallery a consistent responsive grid */
 .gallery{
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap:16px;
+  align-items: stretch;
 }
 
+/* Force every direct child tile to have the same shape */
+.gallery > *{
+  aspect-ratio: 4 / 3;
+  overflow:hidden;
+  border-radius:18px; /* optional */
+}
+
+/* Make images fill the tile */
 .gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+/* --- Fix image cards inside .cards --- */
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;        /* optional: match gallery */
+  margin-top: 16px; /* optional: match earlier rule */
+}
+
+.cards .card{
+  padding: 0;              /* remove the shrinking effect */
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.cards .card img{
   width:100%;
   height:100%;
   object-fit:cover;
