@@ -571,7 +571,8 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   padding:10px;
   border-radius:18px;
   background: rgba(0,0,0,.75);
-  filter: drop-shadow(0 0 15px #00bfff)
-          drop-shadow(0 0 35px #00bfff)
-          drop-shadow(0 0 75px #00bfff);
+  filter:
+  drop-shadow(0 0 8px #008cff)
+  drop-shadow(0 0 18px #008cff)
+  drop-shadow(0 0 35px rgba(0,140,255,.75));
 }
