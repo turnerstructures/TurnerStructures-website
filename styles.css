@@ -457,18 +457,18 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   }
 }
 
-/* ===== Financing (match the 3 service lines) ===== */
-.hero-services .financing,
-.hero-services .financing-sub{
-  display:block !important;
-  font-size:18px !important;     /* same as service lines */
-  font-weight:600 !important;    /* same weight */
-  line-height:1.2 !important;    /* same spacing */
-  margin:8px 0 !important;       /* same vertical rhythm */
-  color: rgba(233,244,255,.82) !important;
+/* ===== FINAL FINANCING FIX (correct target) ===== */
+.brand-text .financing,
+.brand-text .financing-sub {
+  display: block;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(233,244,255,.82);
 }
 
- .hero-services .financing-sub{
-  opacity: 1 !important;    /* slight softness */
+.brand-text .financing-sub {
+  opacity: .82;
 }
 
