@@ -404,3 +404,30 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   .gallery{ grid-template-columns: 1fr; }
   .contact{ grid-template-columns: 1fr; }
 }
+/* ===== Mobile Hero Fix ===== */
+/* ===== Mobile Hero Fix ===== */
+@media (max-width: 900px) {
+
+  .hero-grid {
+    display: block;
+  }
+
+  .brand {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .brand-text,
+  .brand-sub {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .brand-sub {
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    line-height: 1.35;
+  }
+
+}
