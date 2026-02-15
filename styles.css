@@ -518,4 +518,27 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 .brand-text .financing-sub {
   opacity: .82;
 }
+.bullet{
+  position: relative;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(6,18,29,.55);
+  border: 1px solid rgba(42,168,255,.65);
+  color: #ffffff;
+  font-weight: 500;
 
+  /* Neon glow */
+  box-shadow:
+    0 0 6px rgba(42,168,255,.9),
+    0 0 18px rgba(42,168,255,.6),
+    0 0 40px rgba(42,168,255,.35),
+    0 12px 30px rgba(0,0,0,.4);
+}
+.bullet:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 12px rgba(0,191,255,1),
+    0 0 30px rgba(0,191,255,.9),
+    0 0 60px rgba(0,191,255,.6),
+    0 20px 40px rgba(0,0,0,.6);
+}
