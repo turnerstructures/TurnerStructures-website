@@ -576,3 +576,21 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   drop-shadow(0 0 18px #008cff)
   drop-shadow(0 0 35px rgba(0,140,255,.75));
 }
+/* ===== Glowing white border for customer quotes ===== */
+
+.quote {
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 0 8px rgba(255,255,255,.7),
+    0 0 20px rgba(255,255,255,.4),
+    0 12px 30px rgba(0,0,0,.6);
+  transition: all .3s ease;
+}
+
+.quote:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 14px rgba(255,255,255,.9),
+    0 0 35px rgba(255,255,255,.6),
+    0 18px 45px rgba(0,0,0,.7);
+}
