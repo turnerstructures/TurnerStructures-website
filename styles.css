@@ -457,21 +457,13 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   }
 }
 
-/* ===== Hero Financing (single source of truth) ===== */
+/* ===== Hero Financing (match service lines) ===== */
 .hero-services .financing,
 .hero-services .financing-sub{
   display:block;
-  font-size: 24px;     /* adjust this */
-  font-weight: 500;    /* 400 normal, 500 medium, 600 bold */
-  line-height: 1.15;
-}
-
-.hero-services .financing{
-  margin: 10px 0 2px;
-  opacity: 1;
-}
-
-.hero-services .financing-sub{
-  margin: 0 0 8px;
-  opacity: 0.9;
+  font-size: 18px;     /* same as the 3 above */
+  font-weight: 600;    /* same weight */
+  line-height: 1.2;    /* same spacing */
+  margin: 8px 0;       /* same vertical rhythm */
+  opacity: 1;          /* remove fading so it matches exactly */
 }
