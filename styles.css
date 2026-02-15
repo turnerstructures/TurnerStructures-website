@@ -449,15 +449,15 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   }  
   .hero-services span{
   display:block;
-  margin:14px 0;
-  font-size:24px;
+  margin: 8px 0;
+  font-size:20px;
   font-weight:800;
   line-height:1.2;
 }
 }
 
 .brand-sub{
-  font-size:24px;
+  font-size:20px;
   word-break:normal;
   overflow-wrap:normal;
   hyphens:none;
