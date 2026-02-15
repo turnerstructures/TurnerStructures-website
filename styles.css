@@ -450,8 +450,8 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   .hero-services span{
   display:block;
   margin: 8px 0;
-  font-size:18px;
-  font-weight:700;
+  font-size:16px;
+  font-weight:600;
   line-height:1.2;
 }
 }
