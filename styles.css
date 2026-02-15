@@ -467,7 +467,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 }
 /* ===== Hero Services Styling ===== */
 
-.financing {
+.hero-services .financing {
   display: block;
   margin-top: 22px;
   font-weight: 700;
@@ -475,7 +475,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   color: #ffffff;
 }
 
-.financing-sub {
+.hero-services .financing-sub {
   display: block;
   margin-top: 4px;
   margin-bottom: 18px;
