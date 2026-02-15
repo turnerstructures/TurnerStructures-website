@@ -576,21 +576,26 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   drop-shadow(0 0 18px #008cff)
   drop-shadow(0 0 35px rgba(0,140,255,.75));
 }
-/* ===== Glowing white border for customer quotes ===== */
+/* ===== Nuclear white laser beam testimonials ===== */
 
 .quote {
-  border: 1px solid rgba(255,255,255,.35);
+  border: 2px solid #ffffff;
   box-shadow:
-    0 0 8px rgba(255,255,255,.7),
-    0 0 20px rgba(255,255,255,.4),
-    0 12px 30px rgba(0,0,0,.6);
-  transition: all .3s ease;
+    0 0 6px #ffffff,
+    0 0 18px #ffffff,
+    0 0 40px rgba(255,255,255,.95),
+    0 0 80px rgba(255,255,255,.8),
+    0 0 120px rgba(255,255,255,.6),
+    0 20px 50px rgba(0,0,0,.7);
+  transition: all .25s ease;
 }
 
 .quote:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.01);
   box-shadow:
-    0 0 14px rgba(255,255,255,.9),
-    0 0 35px rgba(255,255,255,.6),
-    0 18px 45px rgba(0,0,0,.7);
+    0 0 12px #ffffff,
+    0 0 30px #ffffff,
+    0 0 70px rgba(255,255,255,1),
+    0 0 140px rgba(255,255,255,.9),
+    0 25px 60px rgba(0,0,0,.8);
 }
