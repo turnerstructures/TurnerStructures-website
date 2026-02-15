@@ -210,6 +210,13 @@ code{color: var(--aqua);}
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+/* ===== Electric Proof Section ===== */
+#proof{
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 50% -20%, rgba(42,168,255,.18), transparent 60%),
+    linear-gradient(180deg, rgba(6,18,29,.95), rgba(6,18,29,1));
+}
 .section-head h2{
   margin:0 0 6px;
   font-family: Montserrat, Inter, sans-serif;
