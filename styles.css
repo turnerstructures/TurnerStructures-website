@@ -437,7 +437,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   }
   .brand-logo{
     display:block;
-    width:280px;
+    width:400px; 
     max-width:92vw;
     height:auto;
     margin:0 auto;
@@ -452,7 +452,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
     margin:6px 0;
   }
 
-  .brand-sub {
+  .brand-sub { font-size:16px;
     word-break: normal;
     overflow-wrap: normal;
     hyphens: none;
