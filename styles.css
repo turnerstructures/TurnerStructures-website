@@ -457,7 +457,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 }
 
 .brand-sub{
-  font-size:20px;
+  font-size:14px;
   word-break:normal;
   overflow-wrap:normal;
   hyphens:none;
