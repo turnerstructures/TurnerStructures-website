@@ -457,13 +457,14 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   }
 }
 
-/* ===== Hero Financing (match service lines) ===== */
+/* ===== Hero Financing (match service lines exactly) ===== */
+
 .hero-services .financing,
-.hero-services .financing-sub{
-  display:block;
-  font-size: 18px;     /* same as the 3 above */
-  font-weight: 600;    /* same weight */
-  line-height: 1.2;    /* same spacing */
-  margin: 8px 0;       /* same vertical rhythm */
-  opacity: 1;          /* remove fading so it matches exactly */
+.hero-services .financing-sub {
+  display: block;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 1;
 }
