@@ -469,12 +469,12 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 .financing,
 .financing-sub {
   display: block;
-  font-size: 22px; /* change this number */
+  font-size: 18px; /* change this number */
 }
 
 .hero-services .financing {
-  margin-top: 22px;
-  font-weight: 700;
+  margin-top: 18px;
+  font-weight: 600;
   color: #ffffff;
 }
 
@@ -486,15 +486,15 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 /* ===== Force hero financing text sizes (put at VERY bottom of styles.css) ===== */
 .financing{
   display:block;
-  font-size: 24px !important;
-  font-weight: 700;
+  font-size: 18px !important;
+  font-weight: 600;
   margin-top: 10px;
 }
 
 .financing-sub{
   display:block;
-  font-size: 24px !important;
-  font-weight: 700;
+  font-size: 18px !important;
+  font-weight: 600;
   margin-top: 6px;
   opacity: 1 !important;
 }
