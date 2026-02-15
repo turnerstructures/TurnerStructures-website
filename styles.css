@@ -483,18 +483,20 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   margin-bottom: 18px;
   opacity: 0.75;
 }
-/* ===== Force hero financing text sizes (put at VERY bottom of styles.css) ===== */
+/* ===== Hero financing text (final) ===== */
 .financing{
-  display:block;
-  font-size: 18px !important;
-  font-weight: 600;
-  margin-top: 10px;
+  display: block;
+  font-size: 24px !important;
+  font-weight: 600 !important;   /* <- less bold (try 500 or 400 if you want lighter) */
+  margin: 10px 0 2px !important; /* <- tighter spacing */
+  line-height: 1.15 !important;
 }
 
 .financing-sub{
-  display:block;
-  font-size: 18px !important;
-  font-weight: 600;
-  margin-top: 6px;
-  opacity: 1 !important;
+  display: block;
+  font-size: 24px !important;
+  font-weight: 600 !important;   /* <- match top line */
+  margin: 0 0 8px !important;    /* <- tighter spacing */
+  line-height: 1.15 !important;
+  opacity: 0.9 !important;       /* optional: slightly softer */
 }
