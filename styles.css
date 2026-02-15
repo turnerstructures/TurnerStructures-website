@@ -453,8 +453,7 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
   font-size:18px;
   font-weight:600;
   line-height:1.2;
-}
-}
+  }
 
 .brand-sub{
   font-size:18px;
@@ -467,19 +466,20 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 }
 /* ===== Hero Services Styling ===== */
 
-.hero-services .financing {
+.hero-services .financing,
+.hero-services .financing-sub {
   display: block;
+  font-size: 20px;   /* <-- both same size */
+}
+
+.hero-services .financing {
   margin-top: 22px;
   font-weight: 700;
-  font-size: 24px;
   color: #ffffff;
 }
 
 .hero-services .financing-sub {
-  display: block;
   margin-top: 4px;
   margin-bottom: 18px;
-  font-size: 18px;
   opacity: 0.75;
-}
 }
