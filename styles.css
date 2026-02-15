@@ -441,13 +441,17 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 
 .financing {
   display: block;
-  margin-top: 18px;
-  font-weight: 600;
+  margin-top: 22px;
+  font-weight: 700;
+  font-size: 1rem;
   color: #ffffff;
 }
 
 .financing-sub {
   display: block;
-  font-size: 0.95rem;
-  opacity: 0.85;
+  margin-top: 4px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
 }
