@@ -217,6 +217,36 @@ code{color: var(--aqua);}
     radial-gradient(900px 500px at 50% -20%, rgba(42,168,255,.18), transparent 60%),
     linear-gradient(180deg, rgba(6,18,29,.95), rgba(6,18,29,1));
 }
+/* ===== PROOF section: make it pop ===== */
+#proof{
+  position: relative;
+  overflow: hidden;
+}
+
+#proof::before{
+  content:"";
+  position:absolute;
+  inset:-80px -40px;
+  background:
+    radial-gradient(700px 420px at 20% 10%, rgba(42,168,255,.22), transparent 60%),
+    radial-gradient(600px 380px at 85% 0%, rgba(47,240,216,.14), transparent 62%);
+  pointer-events:none;
+  z-index:0;
+}
+
+#proof::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:2px;
+  background: linear-gradient(90deg, transparent, rgba(42,168,255,.55), transparent);
+  opacity:.9;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* keep content above the glow layers */
+#proof .container{ position:relative; z-index:2; }
 .section-head h2{
   margin:0 0 6px;
   font-family: Montserrat, Inter, sans-serif;
