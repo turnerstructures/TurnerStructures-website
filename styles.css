@@ -268,13 +268,23 @@ code{color: var(--aqua);}
   margin-top: 16px;
 }
 .bullet{
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(6,18,29,.40);
-  border: 1px solid rgba(255,255,255,.10);
-  color: rgba(233,244,255,.86);
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(47,240,216,.10),
+    rgba(42,168,255,.08)
+  );
+  border: 1px solid rgba(47,240,216,.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  color: #ffffff;
+  font-weight: 500;
 }
-
+.bullet:hover{
+  transform: translateY(-2px);
+  transition: .2s ease;
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+}
 /* Quotes */
 .quotes{
   display:grid;
