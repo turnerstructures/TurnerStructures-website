@@ -415,8 +415,9 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
 }
 
 .brand-logo{
-  width:320px;
+  width:400px;
   height:auto;
+}
 }
 
 .brand-text{
