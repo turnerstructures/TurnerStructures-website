@@ -608,3 +608,16 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
     0 0 48px rgba(255,255,255,.6),
     0 16px 40px rgba(0,0,0,.7);
 }
+/* Desktop: make bullets under logo bigger */
+@media (min-width: 901px){
+  .bullets,
+  .bullets li{
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+
+  .bullets strong{
+    font-size: 22px !important;
+    font-weight: 800 !important;
+  }
+}
