@@ -621,3 +621,5 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
     font-weight: 800 !important;
   }
 }
+/* DEBUG: if you can’t see this, desktop is cached */
+body { outline: 10px solid lime !important; }
