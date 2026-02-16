@@ -608,18 +608,14 @@ input:focus, textarea:focus{ border-color: rgba(47,240,216,.55); }
     0 0 48px rgba(255,255,255,.6),
     0 16px 40px rgba(0,0,0,.7);
 }
-/* Desktop: make bullets under logo bigger */
+/* ===== DESKTOP ONLY tweaks ===== */
 @media (min-width: 901px){
-  .bullets,
-  .bullets li{
-    font-size: 18px !important;
-    line-height: 1.35 !important;
+
+  /* Make the sentences under the logo bigger */
+  .brand-sub{
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
   }
 
-  .bullets strong{
-    font-size: 22px !important;
-    font-weight: 800 !important;
-  }
 }
-/* DEBUG: if you can’t see this, desktop is cached */
-body { outline: 10px solid lime !important; }
