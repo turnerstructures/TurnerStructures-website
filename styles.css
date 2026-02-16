@@ -122,7 +122,7 @@ code{color: var(--aqua);}
   margin: 0 0 10px;
   font-family: Montserrat, Inter, sans-serif;
   font-weight: 900;
-  font-size: clamp(38px, 6vw, 80px);
+  font-size: clamp(40px, 6vw, 90px);
   line-height: 1.08;
   letter-spacing: -0.6px;
 }
