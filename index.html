@@ -3,21 +3,22 @@
 <head>
   <!-- =========================================================
     TURNER STRUCTURES - MAX LOCAL SEO DROP-IN (SINGLE FILE)
-    - Stronger title/description (Texarkana-first, service keywords)
+    UPDATED FOCUS: Utility & Industrial Infrastructure (Texarkana-first)
+    - Stronger title/description (utility/industrial keywords + location)
     - Full OpenGraph + canonical + robots
-    - LocalBusiness + WebSite + FAQPage schema (JSON-LD)
+    - WebSite + LocalBusiness + FAQPage schema (JSON-LD)
     - Fixes invalid HTML (nested <p>) + duplicate .gallery wrapper
-    - Adds local intent to key headings and image alt text
+    - Adds local intent to headings + image alt text
   ========================================================== -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO TITLE: lead with primary term + location -->
-  <title>General Contractor in Texarkana, TX | Concrete & Metal Buildings | Turner Structures</title>
+  <!-- SEO TITLE: location + primary services -->
+  <title>Utility & Industrial Infrastructure Contractor in Texarkana, TX | Concrete & Construction | Turner Structures</title>
 
-  <!-- META DESCRIPTION: front-load Texarkana + core services -->
-  <meta name="description" content="Turner Structures is a licensed, bonded & insured general contractor in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Concrete slabs & flatwork, metal/red iron buildings, custom shops, commercial construction, and utility infrastructure. Call/Text 903-280-4458." />
+  <!-- META DESCRIPTION: Texarkana-first + utility/industrial + concrete -->
+  <meta name="description" content="Turner Structures is a licensed, bonded & insured contractor in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Utility & industrial infrastructure support, concrete slabs/pads/flatwork, site prep, and commercial construction. Call/Text 903-280-4458." />
 
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="google-site-verification" content="TU9zzTzZS4707aGvmaSBe1Cz-t1CX75BvWlzOEGxTqk" />
@@ -33,8 +34,8 @@
   <meta property="og:site_name" content="Turner Structures" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.turnerstructuresco.com/" />
-  <meta property="og:title" content="General Contractor in Texarkana, TX | Turner Structures" />
-  <meta property="og:description" content="Concrete, metal/red iron buildings, shops & commercial construction in Texarkana, TX and Texarkana, AR. Call/Text 903-280-4458." />
+  <meta property="og:title" content="Utility & Industrial Infrastructure Contractor in Texarkana, TX | Turner Structures" />
+  <meta property="og:description" content="Utility & industrial infrastructure support, concrete and commercial construction in Texarkana, TX and Texarkana, AR. Call/Text 903-280-4458." />
   <meta property="og:image" content="https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -48,10 +49,9 @@
   <link rel="stylesheet" href="styles.css?v=7" />
 
   <!-- =========================================================
-      SCHEMA: WebSite + LocalBusiness + FAQPage
+      SCHEMA: WebSite + LocalBusiness + FAQPage (Utility/Industrial focus)
       - Replace/extend sameAs as you add profiles (GBP, Instagram, etc.)
-      - serviceArea uses GeoCircle centered on Texarkana (approx coords).
-      - If you prefer not to include coords, remove "serviceArea" block.
+      - GeoCircle centered on Texarkana (approx coords) for service radius
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -73,7 +73,7 @@
         "telephone": "+1-903-280-4458",
         "image": "https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png",
         "logo": "https://turnerstructuresco.com/assets/291B01DA-AFF3-46D4-BC39-F7A089327C6D.png",
-        "description": "Licensed, bonded and insured general contractor based in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Specializing in general construction, concrete construction, metal/red iron buildings, custom shops, commercial construction and utility infrastructure projects. Family experience dating back to 1986.",
+        "description": "Licensed, bonded and insured contractor based in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Specializing in utility & industrial infrastructure support, concrete construction (slabs, pads, flatwork and coatings), site prep, and commercial construction. Family experience dating back to 1986.",
         "foundingDate": "1986",
         "address": {
           "@type": "PostalAddress",
@@ -108,15 +108,14 @@
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Construction Services",
+          "name": "Contracting Services",
           "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Utility & Industrial Infrastructure Support" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Contracting (Residential & Commercial)" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Slabs, Pads & Flatwork" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Coatings (Epoxy / Protective)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Metal Buildings & Red Iron Structures" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Shops, Carports & Equipment Storage" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Construction & Retail Build-Outs" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Utility Infrastructure Projects" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site Prep, Trenching & Foundations" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Construction & Facility Improvements" } }
           ]
         },
         "sameAs": [
@@ -137,18 +136,18 @@
           },
           {
             "@type": "Question",
-            "name": "Do you pour concrete slabs and flatwork?",
+            "name": "Do you handle utility and industrial infrastructure work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. We handle concrete slabs, pads, flatwork and surface prep, and we also offer epoxy and protective coatings."
+              "text": "Yes. We provide utility and industrial infrastructure support including site coordination, repairs, upgrades, trenching/site prep, and concrete pads/foundations."
             }
           },
           {
             "@type": "Question",
-            "name": "Do you build metal buildings and custom shops?",
+            "name": "Do you pour concrete slabs and flatwork?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. We specialize in metal buildings, red iron structures, and custom shop builds across the Texarkana area."
+              "text": "Yes. We handle concrete slabs, pads, flatwork and surface prep, and we also offer epoxy and protective coatings."
             }
           },
           {
@@ -185,7 +184,7 @@
       <div class="brand">
         <img
           src="assets/291B01DA-AFF3-46D4-BC39-F7A089327C6D.png"
-          alt="Turner Structures logo - general contractor in Texarkana TX"
+          alt="Turner Structures logo - utility and industrial infrastructure contractor in Texarkana TX"
           class="brand-logo"
           loading="eager"
           decoding="async"
@@ -193,9 +192,9 @@
         <div class="brand-text">
           <div class="brand-sub hero-services">
             <span class="divider"></span>
-            • Residential & Commercial Construction<br>
+            • Utility & Industrial Infrastructure<br>
             • Concrete & Coatings<br>
-            • Metal & Red Iron Custom Shops<br>
+            • Residential & Commercial Construction<br>
           </div>
           <span class="financing">• Flexible Financing Available</span>
           <span class="financing-sub">• Loans up to $100,000 for Qualified Projects</span>
@@ -206,15 +205,14 @@
         <div class="hero-copy">
           <!-- Local SEO H1 -->
           <h1>
-            General Contractor in Texarkana, TX<br />
-            <span class="accent">Concrete, Metal Buildings, Residential, Commercial, Utility & Industrial Construction</span>
+            Utility & Industrial Infrastructure Contractor in Texarkana, TX<br />
+            <span class="accent">Concrete, Site Prep & Commercial Construction</span>
           </h1>
 
-          <!-- FIXED: removed nested <p> -->
           <p class="lead">
-            Born and raised in Texarkana, Turner Structures is a second-generation construction company proudly serving the Ark-La-Tex region.
-            We specialize in residential, commercial, utililty, & industrial construction, concrete, and custom shop builds.
-            Our name stands behind every project, delivering <strong>Work You Can Stand On.</strong>
+            Born and raised in Texarkana, Turner Structures is a second-generation contracting company proudly serving the Ark-La-Tex region.
+            We specialize in utility and industrial infrastructure support, concrete construction, and commercial and residential projects.
+            Our name stands behind every job, delivering <strong>Work You Can Stand On.</strong>
             Backed by combined family experience since 1986.
           </p>
 
@@ -229,8 +227,8 @@
               <div class="trust-value">Reach out for a detailed, fair estimate</div>
             </div>
             <div class="trust-card">
-              <div class="trust-title">Trusted Solutions</div>
-              <div class="trust-value">Built to Last • Solid Foundations</div>
+              <div class="trust-title">Trusted Execution</div>
+              <div class="trust-value">Safety-first • Built to last</div>
             </div>
             <div class="trust-card">
               <div class="trust-title">Service Area</div>
@@ -260,19 +258,20 @@
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Construction, Concrete & Custom Shops in Texarkana & Surrounding Areas</h2>
-        <p>Trusted, Built to Last Construction. Straightforward Communication, Fair Pricing, and Quality Workmanship.</p>
+        <h2>Utility & Industrial Infrastructure, Concrete & Construction in Texarkana</h2>
+        <p>Responsive service. Clear communication. Quality work built for the field.</p>
       </div>
 
       <div class="cards">
-        <article class="card" id="construction">
-          <div class="icon" aria-hidden="true">🏗️</div>
-          <h3>Residential & Commercial Construction</h3>
-          <p>General construction for homes, shops, red iron, offices, gutters, coatings, additions, and light commercial projects in Texarkana and the Ark-La-Tex.</p>
+        <article class="card" id="utility">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Utility & Industrial Infrastructure</h3>
+          <p>Field-ready support for utility and industrial projects including installs, repairs, upgrades, and site coordination.</p>
           <ul>
-            <li>Shops & Barndominiums</li>
-            <li>Interior & Exterior Finishes</li>
-            <li>Turn-key Builds, Dirt Work, Gutters, Spray Foam, Epoxy, Repairs, Improvements, Upgrades</li>
+            <li>Utility repairs & service work (coordination for gas / water)</li>
+            <li>Trenching, conduit, pads & site prep</li>
+            <li>Concrete foundations & equipment pads</li>
+            <li>Safety-first execution and jobsite coordination</li>
           </ul>
         </article>
 
@@ -281,20 +280,20 @@
           <h3>Concrete & Coatings</h3>
           <p>From slabs & customized plans to epoxy/protective coatings. Clean, durable, professional finishes.</p>
           <ul>
-            <li>Slabs, Pads, Flatwork, engineered plans</li>
-            <li>Epoxy / Protective Coatings</li>
-            <li>Surface Prep & Cleanup</li>
+            <li>Slabs, pads, flatwork, engineered plans</li>
+            <li>Epoxy / protective coatings</li>
+            <li>Surface prep & cleanup</li>
           </ul>
         </article>
 
-        <article class="card" id="structures">
-          <div class="icon" aria-hidden="true">🔩</div>
-          <h3>Metal & Red Iron Custom Builds</h3>
-          <p>Strength, precision, and durability for steel structures, metal shops and red iron builds.</p>
+        <article class="card" id="construction">
+          <div class="icon" aria-hidden="true">🏗️</div>
+          <h3>Residential & Commercial Construction</h3>
+          <p>General contracting for repairs, improvements, additions, and light commercial projects across Texarkana and the Ark-La-Tex.</p>
           <ul>
-            <li>Metal, Steel & Red Iron structures, Repairs, Installs</li>
-            <li>Shops, Carports, RV covers, Awnings, Greenhouses, Equipment Storage</li>
-            <li>Custom and Turn-key Builds</li>
+            <li>Repairs, upgrades & property improvements</li>
+            <li>Interior & exterior finishes</li>
+            <li>Dirt work, gutters, spray foam, coatings & turn-key support</li>
           </ul>
         </article>
       </div>
@@ -302,9 +301,9 @@
       <div class="typical">
         <h3>Typical projects</h3>
         <p>
-          General Construction | Concrete | Dirt Work | Gutters | Awnings | Carports | Steel Buildings | Red Iron |
-          Epoxy Floors/Coatings | Equipment Storage | Foundations | Metal Shops | Offices | Barndominiums |
-          Interior & Exterior Finishes
+          Utility Infrastructure | Industrial Support | Concrete | Equipment Pads | Trenching | Conduit |
+          Site Prep | Foundations | General Construction | Dirt Work | Gutters | Epoxy Floors/Coatings |
+          Offices | Facility Improvements | Interior & Exterior Finishes
         </p>
       </div>
     </div>
@@ -346,10 +345,9 @@
         <p>Real work across Texarkana and the Ark-La-Tex.</p>
       </div>
 
-      <!-- FIXED: removed nested/duplicate gallery wrapper -->
       <div class="gallery">
         <figure class="shot shot--logo">
-          <img src="assets/IMG_0028.jpeg" alt="Turner Structures - general contractor in Texarkana TX" loading="lazy" decoding="async">
+          <img src="assets/IMG_0028.jpeg" alt="Turner Structures contractor in Texarkana TX" loading="lazy" decoding="async">
           <figcaption>Turner Structures</figcaption>
         </figure>
 
@@ -364,28 +362,28 @@
         </figure>
 
         <figure class="shot">
-          <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Steel and red iron structure project in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
-          <figcaption>Steel / Red Iron Project</figcaption>
+          <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Industrial and utility jobsite work in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
+          <figcaption>Utility / Industrial Work</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
-          <figcaption>Construction Project</figcaption>
+          <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Commercial construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
+          <figcaption>Commercial Construction</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="assets/IMG_8618.jpeg" alt="Steel shop building constructed near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          <figcaption>Steel Shop Construction</figcaption>
+          <img src="assets/IMG_8618.jpeg" alt="Jobsite construction support near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          <figcaption>Jobsite Support</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="assets/IMG_9181.png" alt="Interior red iron steel structure framing near Texarkana" loading="lazy" decoding="async">
-          <figcaption>Red Iron Framing</figcaption>
+          <img src="assets/IMG_9181.png" alt="Structural framing and site work near Texarkana" loading="lazy" decoding="async">
+          <figcaption>Site Work</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="assets/IMG_8534.png" alt="Concrete slab foundation installation near Texarkana TX" loading="lazy" decoding="async">
-          <figcaption>Concrete Slab Installation</figcaption>
+          <img src="assets/IMG_8534.png" alt="Concrete foundation and pad installation near Texarkana TX" loading="lazy" decoding="async">
+          <figcaption>Concrete Pad Installation</figcaption>
         </figure>
 
         <figure class="shot">
@@ -418,7 +416,7 @@
           <div class="mini">
             <div><strong>Based in:</strong> Texarkana, TX</div>
             <div><strong>Service area:</strong> Ark-La-Tex</div>
-            <div><strong>Primary services:</strong> General Contracting • Concrete & Coatings • Steel / Red Iron</div>
+            <div><strong>Primary services:</strong> Utility & Industrial Infrastructure • Concrete & Coatings • General Contracting</div>
           </div>
         </div>
 
@@ -445,7 +443,7 @@
 
           <label>
             How can we help you?
-            <textarea required name="details" rows="6" placeholder="Example: concrete pad size, metal shop dimensions, timeline, and any photos."></textarea>
+            <textarea required name="details" rows="6" placeholder="Example: utility repair scope, trench length, equipment pad size, location, timeline, and any photos."></textarea>
           </label>
 
           <button class="btn primary wide" type="submit">Send Request</button>
