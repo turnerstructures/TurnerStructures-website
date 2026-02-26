@@ -1,23 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+    TURNER STRUCTURES - MAX LOCAL SEO DROP-IN (SINGLE FILE)
+    - Stronger title/description (Texarkana-first, service keywords)
+    - Full OpenGraph + canonical + robots
+    - LocalBusiness + WebSite + FAQPage schema (JSON-LD)
+    - Fixes invalid HTML (nested <p>) + duplicate .gallery wrapper
+    - Adds local intent to key headings and image alt text
+  ========================================================== -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turner Structures | Construction | Concrete | Custom Shops | Texarkana</title>
 
-  <meta name="description" content="Turner Structures provides trusted construction solutions across the Ark-La-Tex. Construction & Concrete, Steel/Red Iron Projects, and Shops. Family experience since 1986. Call/Text 903-280-4458." />
-<meta name="google-site-verification" content="TU9zzTzZS4707aGvmaSBe1Cz-t1CX75BvWlzOEGxTqk" />
-  <!-- Canonical: update to your custom domain later -->
+  <!-- SEO TITLE: lead with primary term + location -->
+  <title>General Contractor in Texarkana, TX | Concrete & Metal Buildings | Turner Structures</title>
+
+  <!-- META DESCRIPTION: front-load Texarkana + core services -->
+  <meta name="description" content="Turner Structures is a licensed, bonded & insured general contractor in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Concrete slabs & flatwork, metal/red iron buildings, custom shops, commercial construction, and utility infrastructure. Call/Text 903-280-4458." />
+
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="google-site-verification" content="TU9zzTzZS4707aGvmaSBe1Cz-t1CX75BvWlzOEGxTqk" />
+
   <link rel="canonical" href="https://www.turnerstructuresco.com/" />
 
+  <!-- Optional local hints -->
+  <meta name="geo.region" content="US-TX" />
+  <meta name="geo.placename" content="Texarkana" />
+  <meta name="theme-color" content="#0b0b0b" />
+
   <!-- Social sharing -->
-  <meta property="og:title" content="Turner Structures | Construction | Concrete | Custom Shops | Texarkana" />
-  <meta property="og:description" content="Trusted construction solutions. Second-generation company with family experience since 1986. Call/Text 903-280-4458." />
+  <meta property="og:site_name" content="Turner Structures" />
   <meta property="og:type" content="website" />
-  <!-- If you want, change this to your logo file in /assets -->
+  <meta property="og:url" content="https://www.turnerstructuresco.com/" />
+  <meta property="og:title" content="General Contractor in Texarkana, TX | Turner Structures" />
+  <meta property="og:description" content="Concrete, metal/red iron buildings, shops & commercial construction in Texarkana, TX and Texarkana, AR. Call/Text 903-280-4458." />
   <meta property="og:image" content="https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
@@ -27,66 +47,123 @@
 
   <link rel="stylesheet" href="styles.css?v=7" />
 
-<!-- Local Business schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Turner Structures",
-  "url": "https://www.turnerstructuresco.com/",
-  "telephone": "+1-903-280-4458",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Texarkana",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    "Ark-La-Tex",
-    "Texarkana, TX",
-    "Texarkana, AR",
-    "New Boston, TX",
-    "Wake Village, TX",
-    "Nash, TX",
-    "Redwater, TX",
-    "Hooks, TX",
-    "Atlanta, TX",
-    "De Kalb, TX",
-    "Maud, TX",
-    "Queen City, TX",
-    "Genoa, AR",
-    "Fouke, AR",
-    "Ashdown, AR",
-    "Hope, AR",
-    "Fulton, AR",
-    "Hot Springs, AR"
-  ],
-  "description": "Trusted construction solutions across the Ark-La-Tex. Construction, concrete & coatings, and steel/red iron projects. Family experience dating back to 1986.",
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Residential & Commercial Construction"
+  <!-- =========================================================
+      SCHEMA: WebSite + LocalBusiness + FAQPage
+      - Replace/extend sameAs as you add profiles (GBP, Instagram, etc.)
+      - serviceArea uses GeoCircle centered on Texarkana (approx coords).
+      - If you prefer not to include coords, remove "serviceArea" block.
+  ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.turnerstructuresco.com/#website",
+        "url": "https://www.turnerstructuresco.com/",
+        "name": "Turner Structures",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://www.turnerstructuresco.com/#business" }
+      },
+      {
+        "@type": ["LocalBusiness","HomeAndConstructionBusiness","GeneralContractor"],
+        "@id": "https://www.turnerstructuresco.com/#business",
+        "name": "Turner Structures",
+        "url": "https://www.turnerstructuresco.com/",
+        "telephone": "+1-903-280-4458",
+        "image": "https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png",
+        "logo": "https://turnerstructuresco.com/assets/291B01DA-AFF3-46D4-BC39-F7A089327C6D.png",
+        "description": "Licensed, bonded and insured general contractor based in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Specializing in general construction, concrete construction, metal/red iron buildings, custom shops, commercial construction and utility infrastructure projects. Family experience dating back to 1986.",
+        "foundingDate": "1986",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Texarkana",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Texarkana", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Texarkana", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "New Boston", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Wake Village", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Nash", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Redwater", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Hooks", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Atlanta", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "De Kalb", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Maud", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Queen City", "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" } },
+          { "@type": "City", "name": "Genoa", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "Fouke", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "Ashdown", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "Hope", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "Fulton", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "City", "name": "Hot Springs", "address": { "@type": "PostalAddress", "addressRegion": "AR", "addressCountry": "US" } },
+          { "@type": "AdministrativeArea", "name": "Ark-La-Tex" }
+        ],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.4251, "longitude": -94.0477 },
+          "geoRadius": 160934
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Construction Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Contracting (Residential & Commercial)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Slabs, Pads & Flatwork" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Coatings (Epoxy / Protective)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Metal Buildings & Red Iron Structures" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Shops, Carports & Equipment Storage" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Construction & Retail Build-Outs" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Utility Infrastructure Projects" } }
+          ]
+        },
+        "sameAs": [
+          "https://www.facebook.com/turnerstructures"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.turnerstructuresco.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What areas do you serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Turner Structures is based in Texarkana, TX and serves Texarkana, AR and surrounding Ark-La-Tex communities (typically within about a 2-hour radius)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you pour concrete slabs and flatwork?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We handle concrete slabs, pads, flatwork and surface prep, and we also offer epoxy and protective coatings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build metal buildings and custom shops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We specialize in metal buildings, red iron structures, and custom shop builds across the Texarkana area."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I request a quote?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Call or text 903-280-4458 or submit the quote form on this page. You can text photos for faster estimating."
+            }
+          }
+        ]
       }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Concrete & Concrete Coatings"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Metal & Red Iron Custom Buildings"
-      }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -95,7 +172,7 @@
     <div class="container topbar-inner">
       <div class="pill">
         <span class="dot"></span>
-         <strong>Insured | Bonded</strong>
+        <strong>Insured | Bonded</strong>
       </div>
       <a class="topbar-phone" href="tel:9032804458">Call/Text: <strong>903-280-4458</strong></a>
     </div>
@@ -106,33 +183,39 @@
     <div class="hero-bg"></div>
     <div class="container hero-inner">
       <div class="brand">
-<img src="assets/291B01DA-AFF3-46D4-BC39-F7A089327C6D.png" 
-     alt="Turner Structures Logo" 
-     class="brand-logo">
+        <img
+          src="assets/291B01DA-AFF3-46D4-BC39-F7A089327C6D.png"
+          alt="Turner Structures logo - general contractor in Texarkana TX"
+          class="brand-logo"
+          loading="eager"
+          decoding="async"
+        >
         <div class="brand-text">
-<div class="brand-sub hero-services">
-    <span class="divider"></span>
-
-  • Residential & Commercial Construction<br>
-• Concrete & Coatings<br>
-• Metal & Red Iron Custom Shops <br>
-</div>
-<span class="financing">• Flexible Financing Available</span>
-<span class="financing-sub">• Loans up to $100,000 for Qualified Projects</span>
-</div>
+          <div class="brand-sub hero-services">
+            <span class="divider"></span>
+            • Residential & Commercial Construction<br>
+            • Concrete & Coatings<br>
+            • Metal & Red Iron Custom Shops<br>
+          </div>
+          <span class="financing">• Flexible Financing Available</span>
+          <span class="financing-sub">• Loans up to $100,000 for Qualified Projects</span>
+        </div>
       </div>
 
       <div class="hero-grid">
         <div class="hero-copy">
+          <!-- Local SEO H1 -->
           <h1>
-            Second-Generation Construction you can trust.<br />
-            <span class="accent">Work you can stand on.</span>
+            General Contractor in Texarkana, TX<br />
+            <span class="accent">Concrete, Metal Buildings & Commercial Construction</span>
           </h1>
 
+          <!-- FIXED: removed nested <p> -->
           <p class="lead">
-<p class="lead">
-  Born and raised in Texarkana, Turner Structures is a second-generation construction company proudly serving the Ark-La-Tex region. We specialize in residential and commercial construction, concrete, and custom shop builds. Our name stands behind every project, delivering <strong>Work You Can Stand On.</strong> Backed by combined family experience since 1986, our name stands behind every project.
-
+            Born and raised in Texarkana, Turner Structures is a second-generation construction company proudly serving the Ark-La-Tex region.
+            We specialize in residential and commercial construction, concrete, and custom shop builds.
+            Our name stands behind every project, delivering <strong>Work You Can Stand On.</strong>
+            Backed by combined family experience since 1986.
           </p>
 
           <div class="cta-row">
@@ -183,9 +266,9 @@
 
       <div class="cards">
         <article class="card" id="construction">
-          <div class="icon">🏗️</div>
+          <div class="icon" aria-hidden="true">🏗️</div>
           <h3>Residential & Commercial Construction</h3>
-          <p>General Construction for homes, shops, red iron, offices, gutters, coatings, additions, commercial offices & businesses.</p>
+          <p>General construction for homes, shops, red iron, offices, gutters, coatings, additions, and light commercial projects in Texarkana and the Ark-La-Tex.</p>
           <ul>
             <li>Shops & Barndominiums</li>
             <li>Interior & Exterior Finishes</li>
@@ -194,7 +277,7 @@
         </article>
 
         <article class="card" id="concrete">
-          <div class="icon">🧱</div>
+          <div class="icon" aria-hidden="true">🧱</div>
           <h3>Concrete & Coatings</h3>
           <p>From slabs & customized plans to epoxy/protective coatings. Clean, durable, professional finishes.</p>
           <ul>
@@ -204,13 +287,13 @@
           </ul>
         </article>
 
-        <article class="card" id="Structures">
-          <div class="icon">🔩</div>
+        <article class="card" id="structures">
+          <div class="icon" aria-hidden="true">🔩</div>
           <h3>Metal & Red Iron Custom Builds</h3>
           <p>Strength, precision, and durability for steel structures, metal shops and red iron builds.</p>
           <ul>
             <li>Metal, Steel & Red Iron structures, Repairs, Installs</li>
-            <li> Shops, Carports, RV covers, Awnings, Greenhouses, Equipment Storage</li>
+            <li>Shops, Carports, RV covers, Awnings, Greenhouses, Equipment Storage</li>
             <li>Custom and Turn-key Builds</li>
           </ul>
         </article>
@@ -219,7 +302,9 @@
       <div class="typical">
         <h3>Typical projects</h3>
         <p>
-          General Construction | Concrete | Dirt Work | Gutters | Awnings | Carports | Steel Buildings | Red Iron | Epoxy Floors/Coatings | Equipment Storage | Foundations | Metal Shops | Offices | Barndominiums | Interior & Exterior Finishes
+          General Construction | Concrete | Dirt Work | Gutters | Awnings | Carports | Steel Buildings | Red Iron |
+          Epoxy Floors/Coatings | Equipment Storage | Foundations | Metal Shops | Offices | Barndominiums |
+          Interior & Exterior Finishes
         </p>
       </div>
     </div>
@@ -258,73 +343,60 @@
     <div class="container">
       <div class="section-head">
         <h2>Project photos</h2>
-        <p>Real work across the Ark-La-Tex.</p>
+        <p>Real work across Texarkana and the Ark-La-Tex.</p>
       </div>
 
+      <!-- FIXED: removed nested/duplicate gallery wrapper -->
       <div class="gallery">
-        <!-- Replace/adjust filenames to match your /assets exactly -->
-               <figure class="shot shot--logo">
-          <img src="assets/IMG_0028.jpeg" alt="Turner Structures promotional graphic">
+        <figure class="shot shot--logo">
+          <img src="assets/IMG_0028.jpeg" alt="Turner Structures - general contractor in Texarkana TX" loading="lazy" decoding="async">
           <figcaption>Turner Structures</figcaption>
         </figure>
 
         <figure class="shot">
-  <img src="assets/IMG_9656.jpeg"
-       alt="24x25 concrete slab formed and reinforced, ready for 4,000 PSI pour">
-  <figcaption>Dirt Work & Foundation Prep</figcaption>
-</figure>
-
-<figure class="shot">
-  <img src="assets/IMG_9743.jpeg"
-       alt="Freshly poured and finished concrete slab in Arkansas" />
-  <figcaption>Finished Concrete Slab</figcaption>
-</figure>
-        
-        <figure class="shot">
-          <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Steel/red iron structure project in the Ark-La-Tex">
-          <figcaption>Steel / red iron project</figcaption>
+          <img src="assets/IMG_9656.jpeg" alt="Concrete slab formed and reinforced near Texarkana TX, ready for 4,000 PSI pour" loading="lazy" decoding="async">
+          <figcaption>Dirt Work & Foundation Prep</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Concrete work and construction project in the Ark-La-Tex">
-          <figcaption>Steel / red iron project</figcaption>
+          <img src="assets/IMG_9743.jpeg" alt="Freshly poured and finished concrete slab near Texarkana AR/TX" loading="lazy" decoding="async">
+          <figcaption>Finished Concrete Slab</figcaption>
         </figure>
 
-          <!-- Additional Project Photos -->
-<div class="gallery">
+        <figure class="shot">
+          <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Steel and red iron structure project in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
+          <figcaption>Steel / Red Iron Project</figcaption>
+        </figure>
 
-  <figure class="shot">
-    <img src="assets/IMG_8618.jpeg" 
-         alt="Steel shop building constructed in Ark-La-Tex by Turner Structures">
-    <figcaption>Steel Shop Construction</figcaption>
-  </figure>
+        <figure class="shot">
+          <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
+          <figcaption>Construction Project</figcaption>
+        </figure>
 
-  <figure class="shot">
-    <img src="assets/IMG_9181.png" 
-         alt="Interior red iron steel structure framing">
-    <figcaption>Concrete Slab Installation</figcaption>
-  </figure>
+        <figure class="shot">
+          <img src="assets/IMG_8618.jpeg" alt="Steel shop building constructed near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          <figcaption>Steel Shop Construction</figcaption>
+        </figure>
 
-  <figure class="shot">
-    <img src="assets/IMG_8534.png" 
-         alt="Concrete slab foundation installation">
-    <figcaption>Steel Shop Construction</figcaption>
-  </figure>
+        <figure class="shot">
+          <img src="assets/IMG_9181.png" alt="Interior red iron steel structure framing near Texarkana" loading="lazy" decoding="async">
+          <figcaption>Red Iron Framing</figcaption>
+        </figure>
 
-  <figure class="shot">
-    <img src="assets/IMG_9239.jpeg" 
-         alt="High gloss epoxy coated concrete floor">
-    <figcaption>Epoxy Floor Coating</figcaption>
-  </figure>
+        <figure class="shot">
+          <img src="assets/IMG_8534.png" alt="Concrete slab foundation installation near Texarkana TX" loading="lazy" decoding="async">
+          <figcaption>Concrete Slab Installation</figcaption>
+        </figure>
 
-</div>
+        <figure class="shot">
+          <img src="assets/IMG_9239.jpeg" alt="High gloss epoxy coated concrete floor near Texarkana TX" loading="lazy" decoding="async">
+          <figcaption>Epoxy Floor Coating</figcaption>
+        </figure>
 
-  <figure class="shot">
-    <img src="assets/IMG_0141.jpeg"
-         alt="Turner Structures project photo">
-    <figcaption>Project Photo</figcaption>
-  </figure>
-
+        <figure class="shot">
+          <img src="assets/IMG_0141.jpeg" alt="Turner Structures project photo in Texarkana TX" loading="lazy" decoding="async">
+          <figcaption>Project Photo</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -344,13 +416,13 @@
           <a class="btn primary wide" href="tel:9032804458">903-280-4458</a>
 
           <div class="mini">
+            <div><strong>Based in:</strong> Texarkana, TX</div>
             <div><strong>Service area:</strong> Ark-La-Tex</div>
-            <div><strong>Primary services:</strong> Construction • Concrete & Coatings • Steel / Red Iron</div>
+            <div><strong>Primary services:</strong> General Contracting • Concrete & Coatings • Steel / Red Iron</div>
           </div>
         </div>
 
         <form class="form" name="quote" method="POST" data-netlify="true" action="/thank-you.html">
-          <!-- Netlify required -->
           <input type="hidden" name="form-name" value="quote" />
           <p class="hidden">
             <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -358,22 +430,22 @@
 
           <label>
             Name
-            <input required name="name" type="text" placeholder="" />
+            <input required name="name" type="text" />
           </label>
 
           <label>
             Phone #
-            <input required name="phone" type="tel" placeholder="" />
+            <input required name="phone" type="tel" />
           </label>
 
           <label>
             City / Area
-            <input name="city" type="text" placeholder="" />
+            <input name="city" type="text" placeholder="Texarkana, New Boston, Wake Village..." />
           </label>
 
           <label>
             How can we help you?
-            <textarea required name="details" rows="6" placeholder=""></textarea>
+            <textarea required name="details" rows="6" placeholder="Example: concrete pad size, metal shop dimensions, timeline, and any photos."></textarea>
           </label>
 
           <button class="btn primary wide" type="submit">Send Request</button>
@@ -386,7 +458,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Turner Structures • Ark-La-Tex</div>
+      <div>© <span id="year"></span> Turner Structures • Texarkana, TX • Ark-La-Tex</div>
       <div class="footer-right">
         <a href="tel:9032804458">903-280-4458</a>
         <span class="sep">•</span>
