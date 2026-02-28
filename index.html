@@ -45,11 +45,85 @@
 
   <link rel="stylesheet" href="/styles.css?v=10" />
 
-  <!-- QUICK FIX: ensure this specific image never crops the logo -->
+  <!-- Gallery Carousel styles (safe to keep here) -->
   <style>
-    /* Only affects the photo we tag with .shot--contain */
-    .shot--contain img {
-      object-fit: contain !important;
+    /* ===== Gallery Carousel (Swipe on mobile, buttons on desktop) ===== */
+    .gallery-carousel{
+      position: relative;
+      margin-top: 16px;
+    }
+
+    .g-track{
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 4px 12px;
+    }
+    .g-track::-webkit-scrollbar{ display:none; }
+
+    .g-slide{
+      scroll-snap-align: center;
+      flex: 0 0 86%;
+      max-width: 86%;
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+
+    .g-slide img{
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .g-slide figcaption{
+      padding: 10px 12px;
+      font-size: 13px;
+      color: rgba(255,255,255,.82);
+    }
+
+    /* If you want some slides to NEVER crop (logo safe) add class "g-slide--contain" */
+    .g-slide--contain img{
+      object-fit: contain;
+      background: rgba(0,0,0,.18);
+    }
+
+    .g-btn{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-55%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(3,16,27,.72);
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+    .g-btn.prev{ left: 6px; }
+    .g-btn.next{ right: 6px; }
+
+    @media (max-width: 900px){
+      .g-btn{ display:none; }           /* mobile = swipe */
+      .g-slide{ flex-basis: 92%; max-width: 92%; }
+      .g-slide img{ height: 320px; }
+    }
+
+    @media (min-width: 901px){
+      .g-slide{ flex-basis: 520px; max-width: 520px; }
+      .g-slide img{ height: 340px; }
     }
   </style>
 
@@ -204,14 +278,14 @@
     <div class="hero-bg"></div>
     <div class="container hero-inner">
       <div class="brand">
-      <img
-  src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png"
-  alt="Turner Structures - Concrete, Construction & Metal Buildings in Texarkana TX"
-  class="brand-logo"
-  loading="eager"
-  decoding="async"
->
-    
+        <img
+          src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png"
+          alt="Turner Structures - Concrete, Construction & Metal Buildings in Texarkana TX"
+          class="brand-logo"
+          loading="eager"
+          decoding="async"
+        >
+
         <div class="brand-text">
           <div class="brand-sub hero-services">
             • Concrete • Construction • Metal Buildings<br>
@@ -224,7 +298,6 @@
 
       <div class="hero-grid">
         <div class="hero-copy">
-
           <h1>
             General Contractor in <span class="accent">Texarkana, TX</span><br />
             Concrete, Construction & Metal Buildings<br />
@@ -362,90 +435,96 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (Carousel) -->
   <section class="section" id="gallery">
     <div class="container">
       <div class="section-head">
         <h2>Project photos</h2>
-        <p>Real work across Texarkana and the Ark-La-Tex.</p>
+        <p>Swipe on mobile or click next/prev on desktop.</p>
       </div>
 
-      <div class="gallery">
-        <!-- NEW PHOTO (logo-safe, no cropping) -->
-        <figure class="shot shot--contain">
-          <img
-            src="assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png"
-            alt="Bull float smoothing freshly poured concrete slab by Turner Structures"
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption>Concrete Finishing</figcaption>
-        </figure>
+      <div class="gallery-carousel" aria-label="Project photos carousel">
+        <button class="g-btn prev" type="button" aria-label="Previous photo">‹</button>
 
-        <figure class="shot shot--logo">
-          <img src="assets/IMG_0687.jpeg" alt="Turner Structures general contractor in Texarkana TX" loading="lazy" decoding="async">
-          <figcaption>Turner Structures</figcaption>
-        </figure>
+        <div class="g-track" tabindex="0">
+          <!-- Logo-safe (no cropping) -->
+          <figure class="g-slide g-slide--contain">
+            <img
+              src="assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png"
+              alt="Bull float smoothing freshly poured concrete slab by Turner Structures"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Concrete Finishing</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img
-            src="assets/IMG_0686.jpeg"
-            alt="Dump truck unloading red clay for site prep and foundation work in Texarkana TX"
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption>Site Prep & Dirt Work – Texarkana, TX</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_0687.jpeg" alt="Turner Structures general contractor in Texarkana TX" loading="lazy" decoding="async">
+            <figcaption>Turner Structures</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="/assets/IMG_0524.jpeg" alt="Concrete removal and demolition in Texarkana">
-          <figcaption>Concrete removal and site prep</figcaption>
-        </figure>
-        
-        <figure class="shot">
-          <img src="assets/IMG_9656.jpeg" alt="Concrete slab formed and reinforced near Texarkana TX, ready for 4,000 PSI pour" loading="lazy" decoding="async">
-          <figcaption>Dirt Work & Foundation Prep</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img
+              src="assets/IMG_0686.jpeg"
+              alt="Dump truck unloading red clay for site prep and foundation work in Texarkana TX"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Site Prep & Dirt Work – Texarkana, TX</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_9743.jpeg" alt="Freshly poured and finished concrete slab near Texarkana AR/TX" loading="lazy" decoding="async">
-          <figcaption>Finished Concrete Slab</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_0524.jpeg" alt="Concrete removal and demolition in Texarkana" loading="lazy" decoding="async">
+            <figcaption>Concrete removal and site prep</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Utility and industrial jobsite work in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
-          <figcaption>Utility / Industrial Work</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9656.jpeg" alt="Concrete slab formed and reinforced near Texarkana TX, ready for 4,000 PSI pour" loading="lazy" decoding="async">
+            <figcaption>Dirt Work & Foundation Prep</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Commercial construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
-          <figcaption>Commercial Construction</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9743.jpeg" alt="Freshly poured and finished concrete slab near Texarkana AR/TX" loading="lazy" decoding="async">
+            <figcaption>Finished Concrete Slab</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_8618.jpeg" alt="Jobsite construction support near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          <figcaption>Jobsite Support</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Utility and industrial jobsite work in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
+            <figcaption>Utility / Industrial Work</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_9181.png" alt="Structural framing and site work near Texarkana" loading="lazy" decoding="async">
-          <figcaption>Site Work</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Commercial construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
+            <figcaption>Commercial Construction</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_8534.png" alt="Concrete foundation and pad installation near Texarkana TX" loading="lazy" decoding="async">
-          <figcaption>Concrete Pad Installation</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_8618.jpeg" alt="Jobsite construction support near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+            <figcaption>Jobsite Support</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_9239.jpeg" alt="High gloss epoxy coated concrete floor near Texarkana TX" loading="lazy" decoding="async">
-          <figcaption>Epoxy Floor Coating</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9181.png" alt="Structural framing and site work near Texarkana" loading="lazy" decoding="async">
+            <figcaption>Site Work</figcaption>
+          </figure>
 
-        <figure class="shot">
-          <img src="assets/IMG_0141.jpeg" alt="Turner Structures project photo in Texarkana TX" loading="lazy" decoding="async">
-          <figcaption>Project Photo</figcaption>
-        </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_8534.png" alt="Concrete foundation and pad installation near Texarkana TX" loading="lazy" decoding="async">
+            <figcaption>Concrete Pad Installation</figcaption>
+          </figure>
+
+          <figure class="g-slide">
+            <img src="assets/IMG_9239.jpeg" alt="High gloss epoxy coated concrete floor near Texarkana TX" loading="lazy" decoding="async">
+            <figcaption>Epoxy Floor Coating</figcaption>
+          </figure>
+
+          <figure class="g-slide">
+            <img src="assets/IMG_0141.jpeg" alt="Turner Structures project photo in Texarkana TX" loading="lazy" decoding="async">
+            <figcaption>Project Photo</figcaption>
+          </figure>
+        </div>
+
+        <button class="g-btn next" type="button" aria-label="Next photo">›</button>
       </div>
     </div>
   </section>
@@ -518,6 +597,23 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Carousel next/prev buttons =====
+    (function(){
+      const track = document.querySelector(".g-track");
+      const prev = document.querySelector(".g-btn.prev");
+      const next = document.querySelector(".g-btn.next");
+      if(!track || !prev || !next) return;
+
+      function slideBy(dir){
+        const slide = track.querySelector(".g-slide");
+        const w = slide ? slide.getBoundingClientRect().width : 400;
+        track.scrollBy({ left: dir * (w + 12), behavior: "smooth" });
+      }
+
+      prev.addEventListener("click", () => slideBy(-1));
+      next.addEventListener("click", () => slideBy(1));
+    })();
   </script>
 </body>
 </html>
