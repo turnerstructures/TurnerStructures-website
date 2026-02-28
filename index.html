@@ -11,23 +11,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO TITLE -->
   <title>General Contractor in Texarkana, TX | Concrete + Metal Buildings + Construction | Turner Structures</title>
 
-  <!-- META DESCRIPTION -->
   <meta name="description" content="Turner Structures is a licensed, bonded & insured general contractor in Texarkana, TX serving Texarkana, AR and the Ark-La-Tex. Concrete slabs/pads/flatwork, construction, metal buildings, and utility/industrial infrastructure support as a city gas company vendor. Call/Text 903-280-4458." />
-
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="google-site-verification" content="TU9zzTzZS4707aGvmaSBe1Cz-t1CX75BvWlzOEGxTqk" />
 
   <link rel="canonical" href="https://www.turnerstructuresco.com/" />
 
-  <!-- Optional local hints -->
   <meta name="geo.region" content="US-TX" />
   <meta name="geo.placename" content="Texarkana" />
   <meta name="theme-color" content="#03101b" />
 
-  <!-- Social sharing -->
   <meta property="og:site_name" content="Turner Structures" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.turnerstructuresco.com/" />
@@ -38,100 +33,82 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/styles.css?v=10" />
 
-  <!-- Gallery Carousel styles (safe to keep here) -->
+  <!-- ===== Gallery Carousel styles (Swipe on mobile, buttons on desktop) ===== -->
   <style>
-    /* ===== Gallery Carousel (Swipe on mobile, buttons on desktop) ===== */
-    .gallery-carousel{
-      position: relative;
-      margin-top: 16px;
-    }
+    .gallery-carousel{ position:relative; margin-top:16px; }
 
     .g-track{
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      padding: 8px 4px 12px;
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      -webkit-overflow-scrolling:touch;
+      padding:8px 4px 12px;
     }
     .g-track::-webkit-scrollbar{ display:none; }
 
     .g-slide{
-      scroll-snap-align: center;
-      flex: 0 0 86%;
-      max-width: 86%;
-      margin: 0;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
+      scroll-snap-align:center;
+      flex:0 0 86%;
+      max-width:86%;
+      margin:0;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
     }
 
     .g-slide img{
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      display: block;
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      display:block;
     }
 
-    .g-slide figcaption{
-      padding: 10px 12px;
-      font-size: 13px;
-      color: rgba(255,255,255,.82);
-    }
-
-    /* If you want some slides to NEVER crop (logo safe) add class "g-slide--contain" */
     .g-slide--contain img{
-      object-fit: contain;
-      background: rgba(0,0,0,.18);
+      object-fit:contain;
+      background:rgba(0,0,0,.18);
     }
 
     .g-btn{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-55%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(3,16,27,.72);
-      color: #fff;
-      font-size: 28px;
-      line-height: 1;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      position:absolute;
+      top:50%;
+      transform:translateY(-55%);
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(3,16,27,.72);
+      color:#fff;
+      font-size:28px;
+      line-height:1;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
     }
-    .g-btn.prev{ left: 6px; }
-    .g-btn.next{ right: 6px; }
+    .g-btn.prev{ left:6px; }
+    .g-btn.next{ right:6px; }
 
-    @media (max-width: 900px){
-      .g-btn{ display:none; }           /* mobile = swipe */
-      .g-slide{ flex-basis: 92%; max-width: 92%; }
-      .g-slide img{ height: 320px; }
+    @media (max-width:900px){
+      .g-btn{ display:none; }
+      .g-slide{ flex-basis:92%; max-width:92%; }
+      .g-slide img{ height:320px; }
     }
-
-    @media (min-width: 901px){
-      .g-slide{ flex-basis: 520px; max-width: 520px; }
-      .g-slide img{ height: 340px; }
+    @media (min-width:901px){
+      .g-slide{ flex-basis:520px; max-width:520px; }
+      .g-slide img{ height:340px; }
     }
   </style>
 
-  <!-- =========================================================
-      SCHEMA: WebSite + LocalBusiness + FAQPage
-      Keep as GeneralContractor (broadest relevance for Google)
-      Adds "city gas company vendor" trust signal
-  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -206,9 +183,7 @@
           "Industrial infrastructure support",
           "Site preparation and trenching"
         ],
-        "sameAs": [
-          "https://www.facebook.com/turnerstructures"
-        ]
+        "sameAs": ["https://www.facebook.com/turnerstructures"]
       },
       {
         "@type": "FAQPage",
@@ -262,7 +237,6 @@
 </head>
 
 <body>
-  <!-- Sticky Top Bar -->
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="pill">
@@ -273,19 +247,17 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="container hero-inner">
       <div class="brand">
         <img
           src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png"
-          alt="Turner Structures - Concrete, Construction & Metal Buildings in Texarkana TX"
+          alt="Turner Structures"
           class="brand-logo"
           loading="eager"
           decoding="async"
         >
-
         <div class="brand-text">
           <div class="brand-sub hero-services">
             • Concrete • Construction • Metal Buildings<br>
@@ -354,7 +326,6 @@
     </div>
   </header>
 
-  <!-- SERVICES -->
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
@@ -390,7 +361,7 @@
           <h3>Utility & Industrial Infrastructure Support</h3>
           <p>Field-ready support for installs, repairs, upgrades, and jobsite coordination.</p>
           <ul>
-            <li><strong>City gas company vendor</strong> (utility field support)</li>
+            <li><strong>City gas company vendor</strong></li>
             <li>Trenching, conduit, site prep & backfill</li>
             <li>Concrete foundations and equipment pads</li>
           </ul>
@@ -407,7 +378,6 @@
     </div>
   </section>
 
-  <!-- PROOF / TESTIMONIALS -->
   <section class="section alt" id="proof">
     <div class="container">
       <div class="section-head">
@@ -435,7 +405,6 @@
     </div>
   </section>
 
-  <!-- GALLERY (Carousel) -->
   <section class="section" id="gallery">
     <div class="container">
       <div class="section-head">
@@ -447,80 +416,46 @@
         <button class="g-btn prev" type="button" aria-label="Previous photo">‹</button>
 
         <div class="g-track" tabindex="0">
-          <!-- Logo-safe (no cropping) -->
+          <!-- NOTE: No captions. No photo descriptions. Simple alts only. -->
+
           <figure class="g-slide g-slide--contain">
-            <img
-              src="assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png"
-              alt="Bull float smoothing freshly poured concrete slab by Turner Structures"
-              loading="lazy"
-              decoding="async"
-            >
-            <figcaption>Concrete Finishing</figcaption>
+            <img src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_0687.jpeg" alt="Turner Structures general contractor in Texarkana TX" loading="lazy" decoding="async">
-            <figcaption>Turner Structures</figcaption>
+            <img src="assets/IMG_0683.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img
-              src="assets/IMG_0686.jpeg"
-              alt="Dump truck unloading red clay for site prep and foundation work in Texarkana TX"
-              loading="lazy"
-              decoding="async"
-            >
-            <figcaption>Site Prep & Dirt Work – Texarkana, TX</figcaption>
+            <img src="assets/IMG_9656.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_0524.jpeg" alt="Concrete removal and demolition in Texarkana" loading="lazy" decoding="async">
-            <figcaption>Concrete removal and site prep</figcaption>
+            <img src="assets/IMG_9743.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_9656.jpeg" alt="Concrete slab formed and reinforced near Texarkana TX, ready for 4,000 PSI pour" loading="lazy" decoding="async">
-            <figcaption>Dirt Work & Foundation Prep</figcaption>
+            <img src="assets/IMG_0028.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_9743.jpeg" alt="Freshly poured and finished concrete slab near Texarkana AR/TX" loading="lazy" decoding="async">
-            <figcaption>Finished Concrete Slab</figcaption>
+            <img src="assets/IMG_8618.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/06917dbb0067437d7fb3884c1e607b36.jpeg" alt="Utility and industrial jobsite work in the Texarkana Ark-La-Tex region" loading="lazy" decoding="async">
-            <figcaption>Utility / Industrial Work</figcaption>
+            <img src="assets/IMG_9181.png" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/ab54ff78b0265d2f17ee3d1c6b6e0bb6.jpeg" alt="Commercial construction project in the Texarkana Ark-La-Tex region by Turner Structures" loading="lazy" decoding="async">
-            <figcaption>Commercial Construction</figcaption>
+            <img src="assets/IMG_8534.png" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_8618.jpeg" alt="Jobsite construction support near Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-            <figcaption>Jobsite Support</figcaption>
+            <img src="assets/IMG_9239.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
 
           <figure class="g-slide">
-            <img src="assets/IMG_9181.png" alt="Structural framing and site work near Texarkana" loading="lazy" decoding="async">
-            <figcaption>Site Work</figcaption>
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_8534.png" alt="Concrete foundation and pad installation near Texarkana TX" loading="lazy" decoding="async">
-            <figcaption>Concrete Pad Installation</figcaption>
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_9239.jpeg" alt="High gloss epoxy coated concrete floor near Texarkana TX" loading="lazy" decoding="async">
-            <figcaption>Epoxy Floor Coating</figcaption>
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_0141.jpeg" alt="Turner Structures project photo in Texarkana TX" loading="lazy" decoding="async">
-            <figcaption>Project Photo</figcaption>
+            <img src="assets/IMG_0141.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
         </div>
 
@@ -529,7 +464,6 @@
     </div>
   </section>
 
-  <!-- QUOTE FORM (Netlify Forms) -->
   <section class="section alt" id="quote">
     <div class="container">
       <div class="section-head">
@@ -573,7 +507,7 @@
 
           <label>
             How can we help you?
-            <textarea required name="details" rows="6" placeholder="Example: concrete pad size, metal building/shop scope, utility/industrial support needs, location, timeline, and any photos."></textarea>
+            <textarea required name="details" rows="6" placeholder="Example: scope, location, timeline, and any photos."></textarea>
           </label>
 
           <button class="btn primary wide" type="submit">Send Request</button>
@@ -583,7 +517,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Turner Structures • Texarkana, TX • Ark-La-Tex</div>
