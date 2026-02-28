@@ -545,3 +545,104 @@ input:focus, textarea:focus{
 @media (min-width: 901px){
   .brand-sub{ font-size: 20px; line-height: 1.4; font-weight: 600; }
 }
+/* =========================================================
+   TURNER STRUCTURES — ELECTRIC BLUE DOMINANT OVERRIDE
+   Neon Blue Base + White Letters
+   Paste at bottom of styles.css
+   ========================================================= */
+
+/* Electric blue background */
+body{
+  background:
+    linear-gradient(180deg, #002c4a 0%, #003f6b 60%, #00243d 100%) !important;
+  color:#ffffff !important;
+}
+
+/* Topbar stronger blue */
+.topbar{
+  background:#003f6b !important;
+  border-bottom:1px solid rgba(255,255,255,.15) !important;
+}
+
+/* Pills simplified */
+.pill{
+  background: rgba(255,255,255,.08) !important;
+  border:1px solid rgba(255,255,255,.2) !important;
+  color:#ffffff !important;
+  box-shadow:none !important;
+}
+.dot{ display:none !important; }
+
+.topbar-phone{
+  background:#005a9c !important;
+  color:#ffffff !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* Remove neon gradient text */
+.accent{
+  background:none !important;
+  -webkit-background-clip:unset !important;
+  color:#ffffff !important;
+  filter:none !important;
+}
+
+/* Remove glow shadows */
+.brand-logo{
+  border:2px solid rgba(255,255,255,.35) !important;
+  box-shadow:none !important;
+}
+
+.btn.primary{
+  background:#005a9c !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  box-shadow:none !important;
+}
+
+.btn.ghost{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+}
+
+/* Cards now blue panels */
+.card,
+.trust-card,
+.callout,
+.quote,
+.bullet,
+.cityline,
+.form,
+.contact-card,
+.typical{
+  background: rgba(0, 60, 100, .65) !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:none !important;
+}
+
+/* Remove heavy neon beams */
+#proof,
+#proof::before,
+#proof::after{
+  background:none !important;
+}
+
+/* Inputs */
+input, textarea{
+  background: rgba(255,255,255,.08) !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+}
+input:focus, textarea:focus{
+  border-color:#ffffff !important;
+  box-shadow:none !important;
+}
+
+/* Footer */
+.footer{
+  background:#00243d !important;
+  border-top:1px solid rgba(255,255,255,.15) !important;
+}
+.footer-inner{ color:#ffffff !important; }
