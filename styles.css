@@ -545,6 +545,3 @@ input:focus, textarea:focus{
 @media (min-width: 901px){
   .brand-sub{ font-size: 20px; line-height: 1.4; font-weight: 600; }
 }
-body {
-  background: red !important;
-}
