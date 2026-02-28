@@ -94,6 +94,7 @@
       cursor:pointer;
       -webkit-backdrop-filter:blur(10px);
       backdrop-filter:blur(10px);
+      z-index:2;
     }
     .g-btn.prev{ left:6px; }
     .g-btn.next{ right:6px; }
@@ -109,6 +110,9 @@
     }
   </style>
 
+  <!-- =========================================================
+      SCHEMA: WebSite + LocalBusiness + FAQPage
+  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -162,27 +166,6 @@
           "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.4251, "longitude": -94.0477 },
           "geoRadius": 160934
         },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Construction & Contracting Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Slabs, Pads & Flatwork" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Coatings (Epoxy / Protective)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Metal Buildings & Shops (Residential & Commercial)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Contracting (Residential & Commercial)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Utility & Industrial Infrastructure Support (City Gas Company Vendor)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site Prep, Trenching & Foundations" } }
-          ]
-        },
-        "knowsAbout": [
-          "Concrete slabs and flatwork",
-          "Metal buildings and shops",
-          "General construction and contracting",
-          "Utility infrastructure",
-          "Gas utility vendor field support",
-          "Industrial infrastructure support",
-          "Site preparation and trenching"
-        ],
         "sameAs": ["https://www.facebook.com/turnerstructures"]
       },
       {
@@ -405,6 +388,7 @@
     </div>
   </section>
 
+  <!-- GALLERY (Carousel) -->
   <section class="section" id="gallery">
     <div class="container">
       <div class="section-head">
@@ -416,12 +400,6 @@
         <button class="g-btn prev" type="button" aria-label="Previous photo">‹</button>
 
         <div class="g-track" tabindex="0">
-          <!-- NOTE: No captions. No photo descriptions. Simple alts only. -->
-
-          <figure class="g-slide g-slide--contain">
-            <img src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png" alt="Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
           <figure class="g-slide">
             <img src="assets/IMG_0683.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
@@ -457,19 +435,15 @@
           <figure class="g-slide">
             <img src="assets/IMG_0141.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
           </figure>
+
+          <figure class="g-slide">
+            <img src="assets/IMG_0865.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="g-slide">
+            <img src="assets/1235888185353557109.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
+          </figure>
         </div>
-
-        <figure class="g-slide">
-  <img src="assets/IMG_0865.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
-</figure>
-
-<figure class="g-slide">
-  <img src="assets/1235888185353557109.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
-</figure>
-
-<figure class="g-slide">
-  <img src="assets/IMG_0683.jpeg" alt="Turner Structures" loading="lazy" decoding="async">
-</figure>
 
         <button class="g-btn next" type="button" aria-label="Next photo">›</button>
       </div>
@@ -543,7 +517,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ===== Carousel next/prev buttons =====
     (function(){
       const track = document.querySelector(".g-track");
       const prev = document.querySelector(".g-btn.prev");
