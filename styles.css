@@ -112,7 +112,7 @@ code{color: var(--ice);}
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(3,16,27,.75), rgba(3,16,27,.88)),
+    linear-gradient(180deg, rgba(0,0,0,.35),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") no-repeat;
   background-size: cover;
   background-position: 50% 55%;
