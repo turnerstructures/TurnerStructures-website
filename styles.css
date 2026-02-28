@@ -4,7 +4,7 @@
    - MATCHES company shirt blue (#4FAAEB)
    - Blue-dominant site + WHITE letters
    - iPhone Safari-safe blur (webkit)
-   - CEO/Procurement polish: cleaner panels, less noise, higher readability
+   - Cleaner panels, less noise, higher readability
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
@@ -108,14 +108,17 @@ code{color: var(--ice);}
   overflow: hidden;
   border-bottom: 1px solid var(--line);
 }
+
+/* FIXED: proper gradient + image syntax (with comma + closing parens) */
 .hero-bg{
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.35),
-    url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") no-repeat;
-  background-size: cover;
-  background-position: 50% 55%;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.62)),
+    url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: 50% 55%, 50% 55%;
   filter: saturate(1.02) contrast(1.03);
 }
 
@@ -163,7 +166,7 @@ code{color: var(--ice);}
   align-items:start;
 }
 
-/* CEO readable panel behind hero text */
+/* Readable panel behind hero text */
 .hero-copy{
   background: var(--panel);
   border: 1px solid rgba(255,255,255,.12);
@@ -183,7 +186,7 @@ code{color: var(--ice);}
   color:#fff;
 }
 
-/* Accent: WHITE letters with subtle blue aura */
+/* Accent */
 .accent{
   color:#ffffff;
   text-shadow: 0 0 18px rgba(79,170,235,.22);
@@ -212,7 +215,7 @@ code{color: var(--ice);}
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary button: electric blue with WHITE letters */
+/* Primary button */
 .btn.primary{
   background: linear-gradient(135deg, rgba(79,170,235,.98), rgba(30,167,255,.92));
   color: #ffffff;
@@ -228,7 +231,7 @@ code{color: var(--ice);}
 .btn.ghost:hover{ filter: brightness(1.06); }
 .btn.wide{ width:100%; }
 
-/* Capabilities strip (CEO-friendly) */
+/* Capabilities strip */
 .cap-strip{
   margin-top: 10px;
   display:grid;
