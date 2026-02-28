@@ -111,16 +111,15 @@ code{color: var(--ice);}
 
 /* FIXED: proper gradient + image syntax (with comma + closing parens) */
 .hero-bg{
-  position:absolute;
-  inset:0;
+  position: absolute;
+  inset: 0;
 
-  background-image:
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.75)),
-    url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png");
+  /* ONE clean background statement = fewer ways to break it */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.70)),
+    url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
 
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-  background-position: center, center; /* photo centered */
+  filter: saturate(1.02) contrast(1.03);
 }
 
 .hero-inner{ position:relative; padding: 26px 0 54px; }
