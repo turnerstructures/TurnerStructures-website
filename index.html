@@ -5,7 +5,7 @@
     TURNER STRUCTURES - MAX LOCAL SEO DROP-IN (SINGLE FILE)
     PRIMARY POSITIONING: General Contractor in Texarkana, TX
     SERVICE MIX: Concrete + Construction + Metal Buildings + Utility/Industrial Infrastructure
-    + TRUST SIGNAL: City gas company vendor (utility field support)
+    TRUST SIGNAL: City gas company vendor (utility field support)
   ========================================================== -->
 
   <meta charset="utf-8" />
@@ -45,10 +45,18 @@
 
   <link rel="stylesheet" href="/styles.css?v=10" />
 
+  <!-- QUICK FIX: ensure this specific image never crops the logo -->
+  <style>
+    /* Only affects the photo we tag with .shot--contain */
+    .shot--contain img {
+      object-fit: contain !important;
+    }
+  </style>
+
   <!-- =========================================================
       SCHEMA: WebSite + LocalBusiness + FAQPage
-      - Keep as GeneralContractor (broadest relevance for Google)
-      - Adds "city gas company vendor" trust signal
+      Keep as GeneralContractor (broadest relevance for Google)
+      Adds "city gas company vendor" trust signal
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -361,30 +369,33 @@
         <p>Real work across Texarkana and the Ark-La-Tex.</p>
       </div>
 
-      <figure class="shot">
-  <img
-    src="assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png"
-    alt="Bull float smoothing freshly poured concrete slab by Turner Structures"
-    loading="lazy"
-    decoding="async"
-  >
-  <figcaption>Concrete Finishing</figcaption>
-</figure>
-     
       <div class="gallery">
+        <!-- NEW PHOTO (logo-safe, no cropping) -->
+        <figure class="shot shot--contain">
+          <img
+            src="assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png"
+            alt="Bull float smoothing freshly poured concrete slab by Turner Structures"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Concrete Finishing</figcaption>
+        </figure>
+
         <figure class="shot shot--logo">
           <img src="assets/IMG_0687.jpeg" alt="Turner Structures general contractor in Texarkana TX" loading="lazy" decoding="async">
           <figcaption>Turner Structures</figcaption>
         </figure>
 
         <figure class="shot">
-  <img src="assets/IMG_0686.jpeg" 
-    alt="Dump truck unloading red clay for site prep and foundation work in Texarkana TX" 
-    loading="lazy" 
-    decoding="async">
-  <figcaption>Site Prep & Dirt Work – Texarkana, TX</figcaption>
-</figure>
-        
+          <img
+            src="assets/IMG_0686.jpeg"
+            alt="Dump truck unloading red clay for site prep and foundation work in Texarkana TX"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Site Prep & Dirt Work – Texarkana, TX</figcaption>
+        </figure>
+
         <figure class="shot">
           <img src="assets/IMG_9656.jpeg" alt="Concrete slab formed and reinforced near Texarkana TX, ready for 4,000 PSI pour" loading="lazy" decoding="async">
           <figcaption>Dirt Work & Foundation Prep</figcaption>
