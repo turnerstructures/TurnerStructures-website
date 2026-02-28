@@ -119,7 +119,7 @@ code{color: var(--ice);}
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png");
 
   background-repeat: no-repeat, no-repeat;
-  background-size: cover;
+  background-size: cover, cover;
   background-position: center, center; /* photo centered */
 }
 
