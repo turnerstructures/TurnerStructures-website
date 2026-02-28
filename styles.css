@@ -542,3 +542,113 @@ input:focus, textarea:focus{
 @media (min-width: 901px){
   .brand-sub{ font-size: 20px; line-height: 1.4; font-weight: 600; }
 }
+/* =========================================================
+   CEO / PROCUREMENT POLISH PATCH (paste at bottom)
+   Keeps Turner electric blue, removes "busy/glowy" feel
+   ========================================================= */
+
+:root{
+  --neon:#4FAAEB;
+  --ink:#071a2b;                  /* deep professional navy */
+  --panel: rgba(7,26,43,.82);     /* solid panel for readability */
+  --panel2: rgba(255,255,255,.06);
+  --line2: rgba(255,255,255,.12);
+}
+
+/* Reduce visual noise globally */
+body{
+  background:
+    radial-gradient(900px 600px at 12% 0%, rgba(79,170,235,.18), transparent 60%),
+    linear-gradient(180deg, #03101b 0%, #020a12 100%) !important;
+}
+
+.topbar{
+  background: rgba(3,16,27,.86) !important;
+  border-bottom: 1px solid var(--line2) !important;
+  box-shadow: none !important;
+}
+.pill, .topbar-phone{
+  box-shadow: none !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+}
+
+/* HERO: make it corporate readable */
+.hero-bg{
+  background:
+    linear-gradient(180deg, rgba(3,16,27,.35), rgba(3,16,27,.65)),
+    url("/assets/06917dbb0067437d7fb3884c1e607b36.jpeg") center/cover no-repeat !important;
+  filter: saturate(1.02) contrast(1.03) !important;
+  transform:none !important;
+}
+
+/* Create a clean hero panel behind text */
+.hero-copy{
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+}
+
+/* Headline hierarchy: less “poster”, more “executive brief” */
+.hero-copy h1{
+  font-size: clamp(34px, 5vw, 56px) !important;
+  letter-spacing: -0.4px !important;
+  text-shadow: none !important;
+}
+
+/* Keep accent, but make it professional (no gradient fill) */
+.accent{
+  color:#ffffff !important;
+  text-shadow: 0 0 18px rgba(79,170,235,.22) !important;
+}
+
+/* Reduce logo slab dominance */
+.brand-logo{
+  width: min(420px, 100%) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  background: rgba(0,0,0,.28) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.32) !important;
+}
+
+/* Cards and glass panels: simplify */
+.card, .trust-card, .callout, .quote, .bullet, .cityline, .form, .contact-card, .typical{
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: none !important;
+}
+
+/* Buttons: crisp, procurement-safe */
+.btn{
+  box-shadow: none !important;
+}
+.btn.primary{
+  background: linear-gradient(135deg, rgba(79,170,235,.95), rgba(30,167,255,.92)) !important;
+  color:#071a2b !important; /* executive look: dark text on bright button */
+  border: 0 !important;
+}
+.btn.ghost{
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+}
+
+/* Make service bullets more readable */
+.brand-sub{
+  color: rgba(255,255,255,.92) !important;
+  line-height: 1.45 !important;
+}
+
+/* Improve small text legibility */
+.lead, .small, .muted{
+  color: rgba(255,255,255,.86) !important;
+}
+
+/* Mobile: remove “floating glass overload” */
+@media (max-width: 900px){
+  .hero-copy{
+    padding: 16px 14px !important;
+  }
+  .cta-row{
+    gap: 10px !important;
+  }
+}
