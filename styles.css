@@ -112,9 +112,13 @@ code{color: var(--ice);}
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(3,16,27,.75), rgba(3,16,27,.85)),
-    url("/assets/IMG_0687.jpeg") center 25% / cover no-repeat;
+    linear-gradient(180deg, rgba(3,16,27,.75), rgba(3,16,27,.88)),
+    url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") no-repeat;
+  background-size: cover;
+  background-position: 50% 55%;
+  filter: saturate(1.02) contrast(1.03);
 }
+
 .hero-inner{ position:relative; padding: 26px 0 54px; }
 
 /* Brand block */
