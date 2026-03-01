@@ -1,46 +1,45 @@
 /* =========================================================
-   TURNER STRUCTURES — ELECTRIC NEON BLUE (FULL FILE)
+   TURNER STRUCTURES — LEADS-FIRST (FULL FILE)
    Drop-in replacement for styles.css
-   - MATCHES company shirt blue (#4FAAEB)
-   - Blue-dominant site + WHITE letters
-   - iPhone Safari-safe blur (webkit)
-   - Cleaner panels, less noise, higher readability
-   - PHASE 1 (AGGRESSIVE): Stronger hierarchy + stronger CTAs
+   Brand: #4FAAEB + White
+   Goal: More calls + quote requests (clear hierarchy + obvious click targets)
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
 :root{
-  /* Core palette */
-  --neon:#4FAAEB;                 /* MATCHED to shirt */
-  --neon2:#1EA7FF;                /* kept for glow accents only */
+  --brand:#4FAAEB;          /* primary brand blue */
+  --brandGlow: rgba(79,170,235,.35);
   --ice:#CFEFFF;
 
-  /* Base (deep professional navy, not black) */
   --bg:#03101b;
   --bg2:#041a2c;
 
   /* Panels */
-  --panel: rgba(7,26,43,.82);     /* primary readable panel */
-  --panel2: rgba(255,255,255,.06);
+  --panel: rgba(7,26,43,.86);     /* readable */
+  --panelSoft: rgba(255,255,255,.06);
 
   /* Text */
   --text:#ffffff;
   --muted: rgba(255,255,255,.82);
 
-  /* Lines / shadows */
+  /* Lines */
   --line: rgba(255,255,255,.12);
+  --lineStrong: rgba(255,255,255,.22);
+
+  /* Shadows */
   --shadow: 0 18px 45px rgba(0,0,0,.35);
+  --shadowStrong: 0 22px 60px rgba(0,0,0,.48);
+
   --radius: 18px;
   --max: 1120px;
 
-  /* Type */
   --title: Montserrat, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --body:  Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* ---------- Resets / Base ---------- */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+/* ---------- Base / Resets ---------- */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
 body{
   font-family: var(--body);
   color: var(--text);
@@ -51,11 +50,28 @@ body{
     linear-gradient(180deg, var(--bg) 0%, #020a12 100%);
 }
 
-a{color:inherit;text-decoration:none}
-.container{width:min(var(--max), calc(100% - 36px)); margin:0 auto;}
-.hidden{display:none}
-.muted{color: var(--muted);}
-code{color: var(--ice);}
+a{ color:inherit; text-decoration:none; }
+.container{ width:min(var(--max), calc(100% - 36px)); margin:0 auto; }
+.hidden{ display:none; }
+.muted{ color: var(--muted); }
+code{ color: var(--ice); }
+
+/* ---------- LEADS-FIRST: Make links look like links (but keep .btn clean) ---------- */
+a:not(.btn):not(.topbar-phone){
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,.35);
+  text-underline-offset: 3px;
+}
+a:not(.btn):not(.topbar-phone):hover{
+  text-decoration-color: #ffffff;
+}
+
+/* Focus states (important on mobile + accessibility) */
+:focus-visible{
+  outline: 3px solid rgba(79,170,235,.75);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
 
 /* ---------- Topbar ---------- */
 .topbar{
@@ -76,6 +92,7 @@ code{color: var(--ice);}
   padding: 10px 0;
   gap: 12px;
 }
+
 .pill{
   display:flex;
   align-items:center;
@@ -88,19 +105,25 @@ code{color: var(--ice);}
   color: #fff;
 }
 .dot{
-  width:10px;height:10px;border-radius:50%;
-  background: linear-gradient(135deg, var(--ice), var(--neon));
+  width:10px; height:10px; border-radius:50%;
+  background: linear-gradient(135deg, var(--ice), var(--brand));
   box-shadow:
-    0 0 10px rgba(79,170,235,.55),
-    0 0 22px rgba(79,170,235,.30);
+    0 0 12px rgba(79,170,235,.55),
+    0 0 26px rgba(79,170,235,.32);
 }
+
+/* Make phone look like a CTA (more calls) */
 .topbar-phone{
   font-size: 14px;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border-radius: 999px;
   color:#fff;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  border: 2px solid #ffffff; /* strong contrast */
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+.topbar-phone:hover{
+  background: rgba(255,255,255,.08);
 }
 
 /* ---------- Hero ---------- */
@@ -110,15 +133,12 @@ code{color: var(--ice);}
   border-bottom: 1px solid var(--line);
 }
 
-/* FIXED: proper gradient + image syntax (with comma + closing parens) */
 .hero-bg{
   position: absolute;
   inset: 0;
-
   background:
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.75)),
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.78)),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
-
   filter: saturate(1.02) contrast(1.03);
 }
 
@@ -138,7 +158,7 @@ code{color: var(--ice);}
   height:auto;
   object-fit:contain;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.16);
+  border: 2px solid rgba(255,255,255,.16);
   background: rgba(0,0,0,.28);
   box-shadow: 0 10px 28px rgba(0,0,0,.32);
 }
@@ -166,16 +186,15 @@ code{color: var(--ice);}
   align-items:start;
 }
 
-/* Readable panel behind hero text */
+/* Lead-gen readability panel */
 .hero-copy{
   background: var(--panel);
-  border: 2px solid rgba(255,255,255,.14);
+  border: 2px solid rgba(255,255,255,.18);
   border-radius: 18px;
   padding: 18px 16px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadowStrong);
 }
 
-/* Headline hierarchy (AGGRESSIVE) */
 .hero-copy h1{
   margin: 0 0 14px;
   font-family: var(--title);
@@ -186,7 +205,6 @@ code{color: var(--ice);}
   color:#fff;
 }
 
-/* Accent */
 .accent{
   color:#ffffff;
   text-shadow: 0 0 18px rgba(79,170,235,.22);
@@ -195,50 +213,57 @@ code{color: var(--ice);}
 .lead{
   margin: 0 0 14px;
   max-width: 760px;
-  color: rgba(255,255,255,.90);
+  color: rgba(255,255,255,.92);
   font-size: 16px;
 }
 
-/* CTAs */
+/* ---------- Buttons (LEADS-FIRST) ---------- */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: 14px 0 10px; }
+
+/* Make ALL buttons obviously clickable */
 .btn{
   display:inline-flex;
   justify-content:center;
   align-items:center;
   padding: 12px 16px;
   border-radius: 14px;
-  border: 2px solid rgba(255,255,255,.18);
+
+  /* White border = “click me” */
+  border: 2px solid #ffffff;
+  background: rgba(255,255,255,.05);
+
   font-weight: 900;
   font-family: var(--title);
   letter-spacing: .2px;
-  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary button (AGGRESSIVE SOLID BRAND) */
+/* Primary = dominant action */
 .btn.primary{
-  background: var(--neon);
+  background: var(--brand);
   color: #ffffff;
   border: 2px solid #ffffff;
   font-size: 18px;
   padding: 14px 18px;
-  box-shadow: 0 12px 30px rgba(79,170,235,.45);
+  box-shadow: 0 14px 34px rgba(79,170,235,.52);
 }
 .btn.primary:hover{
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(79,170,235,.60);
   filter: brightness(1.06);
+  box-shadow: 0 20px 46px rgba(79,170,235,.65);
 }
 
+/* Ghost = second-best action, still clearly a button */
 .btn.ghost{
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255,255,255,.28);
+  border: 2px solid #ffffff;
 }
 .btn.ghost:hover{
-  border-color: var(--neon);
-  box-shadow: 0 0 0 3px rgba(79,170,235,.16);
-  filter: brightness(1.06);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 0 0 3px rgba(79,170,235,.18);
 }
 
 .btn.wide{ width:100%; }
@@ -252,7 +277,7 @@ code{color: var(--ice);}
 }
 .cap{
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 14px;
   padding: 10px 12px;
   color: rgba(255,255,255,.92);
@@ -272,7 +297,7 @@ code{color: var(--ice);}
   border-radius: 16px;
   padding: 12px 14px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
 .trust-title{ font-size: 12px; color: rgba(255,255,255,.72); margin-bottom: 2px; }
 .trust-value{ font-weight: 900; font-size: 14px; color: rgba(255,255,255,.94); }
@@ -282,7 +307,8 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 14px 34px rgba(0,0,0,.30);
 }
 .callout h3{
   margin:0 0 8px;
@@ -290,7 +316,7 @@ code{color: var(--ice);}
   font-weight: 900;
   color:#fff;
 }
-.callout p{ margin:0 0 12px; color: rgba(255,255,255,.88); }
+.callout p{ margin:0 0 12px; color: rgba(255,255,255,.90); }
 .small{ margin-top: 10px; font-size: 12px; color: rgba(255,255,255,.78); }
 
 /* ---------- Sections ---------- */
@@ -301,18 +327,19 @@ code{color: var(--ice);}
   border-bottom: 1px solid var(--line);
 }
 
-/* Section headings (AGGRESSIVE BRAND COLOR) */
+/* Headings pop (scan-friendly = more conversions) */
 .section-head h2{
   margin:0 0 6px;
   font-family: var(--title);
   font-weight: 900;
   font-size: 28px;
-  color: var(--neon);
+  color: var(--brand);
   letter-spacing: -0.2px;
+  text-shadow: 0 0 14px rgba(79,170,235,.18);
 }
-.section-head p{ margin:0; color: rgba(255,255,255,.84); }
+.section-head p{ margin:0; color: rgba(255,255,255,.86); }
 
-/* ---------- Proof ---------- */
+/* Proof */
 #proof{
   position: relative;
   overflow: hidden;
@@ -331,7 +358,6 @@ code{color: var(--ice);}
 }
 #proof .container{ position:relative; z-index:2; }
 
-/* Proof bullets */
 .bullets{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
@@ -342,12 +368,11 @@ code{color: var(--ice);}
   padding: 16px 18px;
   border-radius: 18px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 650;
 }
 
-/* Quotes */
 .quotes{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
@@ -359,12 +384,12 @@ code{color: var(--ice);}
   border-radius: 18px;
   padding: 16px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
 .quote p{ margin:0 0 8px; color: rgba(255,255,255,.92); }
 .quote footer{ color: rgba(255,255,255,.70); }
 
-/* ---------- Cards ---------- */
+/* Cards */
 .cards{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -375,20 +400,20 @@ code{color: var(--ice);}
   border-radius: var(--radius);
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.16);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .card:hover{
-  border-color: var(--neon);
+  border-color: #ffffff;               /* stronger hover contrast */
   transform: translateY(-3px);
-  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  box-shadow: var(--shadowStrong);
 }
 
 .icon{
   width:44px;height:44px;border-radius: 14px;
-  display:grid;place-items:center;
+  display:grid; place-items:center;
   background: rgba(255,255,255,.08);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.16);
   margin-bottom: 10px;
 }
 .card h3{
@@ -397,48 +422,23 @@ code{color: var(--ice);}
   font-weight: 900;
   color:#fff;
 }
-.card p{ margin:0 0 10px; color: rgba(255,255,255,.88); }
-.card ul{ margin:0; padding-left: 18px; color: rgba(255,255,255,.82); }
+.card p{ margin:0 0 10px; color: rgba(255,255,255,.90); }
+.card ul{ margin:0; padding-left: 18px; color: rgba(255,255,255,.84); }
 
 .typical{
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 16px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
 .typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color:#fff; }
-.typical p{ margin:0; color: rgba(255,255,255,.84); }
+.typical p{ margin:0; color: rgba(255,255,255,.86); }
 
-/* ---------- Gallery ---------- */
-.gallery{
-  display:grid;
-  gap: 12px;
-  margin-top: 16px;
-}
-.shot{
-  margin:0;
-  border-radius: 18px;
-  overflow:hidden;
-  border: 2px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  aspect-ratio: 4 / 3;
-}
-.shot img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.shot figcaption{
-  padding: 10px 12px;
-  color: rgba(255,255,255,.82);
-  font-size: 13px;
-}
-.shot--logo{ grid-column: 1 / -1; }
-.shot--logo img{ object-fit: contain; background: rgba(0,0,0,.18); }
+/* Gallery base (your carousel has its own inline CSS) */
+.gallery{ display:grid; gap: 12px; margin-top: 16px; }
 
-/* ---------- Contact / Form ---------- */
+/* Contact / Form */
 .contact{
   display:grid;
   grid-template-columns: .9fr 1.1fr;
@@ -450,14 +450,14 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
-.lead2{ margin-top: 6px; color: rgba(255,255,255,.88); }
+.lead2{ margin-top: 6px; color: rgba(255,255,255,.90); }
 .mini{
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.84);
+  color: rgba(255,255,255,.86);
   font-size: 13px;
 }
 
@@ -465,9 +465,9 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
-label{ display:block; margin-bottom: 12px; color: rgba(255,255,255,.90); }
+label{ display:block; margin-bottom: 12px; color: rgba(255,255,255,.92); }
 input, textarea{
   width:100%;
   margin-top: 6px;
@@ -488,10 +488,10 @@ input:focus, textarea:focus{
   border-radius: 18px;
   padding: 14px 16px;
   background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
 }
 
-/* ---------- Footer ---------- */
+/* Footer */
 .footer{
   padding: 18px 0 24px;
   border-top: 1px solid var(--line);
@@ -508,13 +508,12 @@ input:focus, textarea:focus{
 .footer-right{ display:flex; align-items:center; gap: 10px; }
 .sep{ opacity:.6; }
 
-/* ---------- Responsive ---------- */
+/* ---------- Mobile Responsive ---------- */
 @media (max-width: 900px){
   .trust-row{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: 1fr; }
   .bullets{ grid-template-columns: 1fr; }
   .quotes{ grid-template-columns: 1fr; }
-  .gallery{ grid-template-columns: 1fr; }
   .contact{ grid-template-columns: 1fr; }
   .brand-sub{ font-size: 16px; line-height:1.35; }
   .brand-text .financing,
@@ -524,14 +523,72 @@ input:focus, textarea:focus{
 }
 
 /* =========================================================
-   CALLS-FIRST: Sticky mobile Call/Text button (AGGRESSIVE)
+   CALLS-FIRST MOBILE ACTIONS
+   Supports BOTH patterns:
+   1) .mobile-bar (2 buttons)
+   2) .mobile-call (single button)
    ========================================================= */
 
-.mobile-call{
-  display:none;
-}
+/* Default off */
+.mobile-bar,
+.mobile-call{ display:none; }
 
 @media (max-width: 900px){
+
+  /* If you use the TWO-button bar in HTML */
+  .mobile-bar{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 9999;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    padding: 10px;
+    border-radius: 18px;
+
+    background: rgba(3,16,27,.88);
+    border: 1px solid rgba(255,255,255,.16);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 24px 70px rgba(0,0,0,.55);
+  }
+
+  .mobile-bar__btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding: 14px 12px;
+    border-radius: 14px;
+
+    font-family: var(--title);
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: .3px;
+
+    border: 2px solid #ffffff;
+  }
+
+  /* Call button = strongest */
+  .mobile-bar__btn--call{
+    background: var(--brand);
+    color:#fff;
+    box-shadow: 0 14px 34px rgba(79,170,235,.55);
+  }
+
+  /* Quote button = clear secondary */
+  .mobile-bar__btn--quote{
+    background: transparent;
+    color:#fff;
+  }
+
+  /* If you use the ONE-button mobile-call in HTML */
   .mobile-call{
     position: fixed;
     left: 14px;
@@ -552,16 +609,14 @@ input:focus, textarea:focus{
     letter-spacing: .4px;
 
     color: #fff;
-    background: var(--neon);
+    background: var(--brand);
     border: 2px solid #ffffff;
-    box-shadow: 0 18px 45px rgba(79,170,235,.55);
+    box-shadow: 0 18px 55px rgba(79,170,235,.55);
 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 
-  /* adds breathing room so button doesn't cover content */
-  body{
-    padding-bottom: 80px;
-  }
+  /* breathing room so bottom bar doesn't cover content */
+  body{ padding-bottom: 92px; }
 }
