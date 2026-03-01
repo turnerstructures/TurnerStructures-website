@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Projects in Texarkana, TX | Concrete • Metal Buildings • Construction | Turner Structures</title>
+
+  <meta name="description" content="See Turner Structures projects in Texarkana, TX and the Ark-La-Tex: concrete slabs, metal shop buildings, construction, and utility & industrial infrastructure support. Licensed, bonded & insured General Contractor. City gas company vendor. Call/Text 903-280-4458." />
+
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://www.turnerstructuresco.com/projects.html" />
+
+  <meta name="geo.region" content="US-TX" />
+  <meta name="geo.placename" content="Texarkana" />
+  <meta name="theme-color" content="#03101b" />
+
+  <meta property="og:site_name" content="Turner Structures" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.turnerstructuresco.com/projects.html" />
+  <meta property="og:title" content="Texarkana Projects | Turner Structures" />
+  <meta property="og:description" content="Concrete, metal structures, construction, and utility/industrial support projects in Texarkana TX/AR and the Ark-La-Tex. City gas company vendor. Call/Text 903-280-4458." />
+  <meta property="og:image" content="https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css?v=10" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":["LocalBusiness","HomeAndConstructionBusiness","GeneralContractor"],
+        "@id":"https://www.turnerstructuresco.com/#business",
+        "name":"Turner Structures",
+        "url":"https://www.turnerstructuresco.com/",
+        "telephone":"+1-903-280-4458",
+        "areaServed":["Texarkana, TX","Texarkana, AR","Ark-La-Tex"],
+        "sameAs":["https://www.facebook.com/turnerstructures"],
+        "description":"Licensed, bonded and insured General Contractor in Texarkana, TX. Concrete, metal structures, construction, and utility/industrial infrastructure support as a city gas company vendor."
+      },
+      {
+        "@type":"CollectionPage",
+        "@id":"https://www.turnerstructuresco.com/projects.html#page",
+        "name":"Projects in Texarkana, TX",
+        "isPartOf":{"@id":"https://www.turnerstructuresco.com/#website"},
+        "about":{"@id":"https://www.turnerstructuresco.com/#business"}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="pill">
+        <span class="dot"></span>
+        <strong>Texarkana | Concrete | Metal Structures | Construction</strong>
+      </div>
+      <a class="topbar-phone" href="tel:9032804458">Call/Text: <strong>903-280-4458</strong></a>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="brand">
+        <img
+          src="assets/C1124C6F-5640-41F7-94CB-D18E8335DCBB.png"
+          alt="Turner Structures - Texarkana Projects - Concrete - Metal Structures - Construction"
+          class="brand-logo"
+          loading="eager"
+          decoding="async"
+        >
+        <div class="brand-text">
+          <div class="brand-sub hero-services">
+            Texarkana | Concrete | Metal Structures | Construction<br>
+            Utility & Industrial Infrastructure Support (City Gas Company Vendor)
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Projects in <span class="accent">Texarkana, TX</span></h1>
+          <p class="lead">
+            These are real Turner Structures jobs across <strong>Texarkana TX/AR</strong> and the <strong>Ark-La-Tex</strong>:
+            <strong>concrete slabs</strong>, <strong>metal shop buildings</strong>, <strong>construction</strong>, and
+            <strong>utility & industrial infrastructure</strong> support.
+            We’re a licensed, bonded & insured <strong>General Contractor in Texarkana</strong> and a proud <strong>city gas company vendor</strong>.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="tel:9032804458">Call/Text 903-280-4458</a>
+            <a class="btn ghost" href="/concrete-contractor-texarkana.html">Texarkana Concrete</a>
+            <a class="btn ghost" href="/metal-buildings-texarkana.html">Texarkana Metal Buildings</a>
+          </div>
+
+          <div class="cap-strip">
+            <div class="cap"><strong>Pro tip:</strong> Each project page is a quick “what we built + photos + results” story.</div>
+            <div class="cap"><strong>More updates:</strong> We also post job photos on Facebook.</div>
+            <div class="cap"><strong>Facebook:</strong> <a href="https://www.facebook.com/turnerstructures" target="_blank" rel="noopener">Turner Structures</a></div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="callout">
+            <h3>Want a similar build?</h3>
+            <p>Text photos and details for faster quoting in Texarkana.</p>
+            <a class="btn primary wide" href="tel:9032804458">Call/Text 903-280-4458</a>
+            <div class="small">Texarkana General Contractor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="project-list">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Texarkana projects</h2>
+        <p>Click a project to see scope, photos, and the finished result.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">🏗️</div>
+          <h3>Metal Shop Building in Texarkana</h3>
+          <p>Shop building project with clear communication and turn-key coordination.</p>
+          <p style="margin-top:12px;">
+            <a class="btn ghost" href="/project-texarkana-shop-building.html">View project →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">🧱</div>
+          <h3>Concrete Slab Project (Template)</h3>
+          <p>Duplicate the case-study template for every slab, pad, or flatwork job in Texarkana.</p>
+          <p style="margin-top:12px;">
+            <a class="btn ghost" href="/project-texarkana-shop-building.html#template-notes">Use the template →</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Utility & Industrial Support (Template)</h3>
+          <p>Use the same format to document utility/industrial infrastructure support work (as allowed).</p>
+          <p style="margin-top:12px;">
+            <a class="btn ghost" href="/project-texarkana-shop-building.html#template-notes">Use the template →</a>
+          </p>
+        </article>
+      </div>
+
+      <div class="typical">
+        <h3>Want your project featured?</h3>
+        <p>
+          Call/Text <strong>903-280-4458</strong> or request a quote. We serve Texarkana TX/AR and the Ark-La-Tex.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Turner Structures • Texarkana, TX • Ark-La-Tex</div>
+      <div class="footer-right">
+        <a href="/">Home</a>
+        <span class="sep">•</span>
+        <a href="/concrete-contractor-texarkana.html">Concrete</a>
+        <span class="sep">•</span>
+        <a href="/metal-buildings-texarkana.html">Metal Buildings</a>
+        <span class="sep">•</span>
+        <a href="https://www.facebook.com/turnerstructures" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
