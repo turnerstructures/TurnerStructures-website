@@ -1,51 +1,35 @@
 /* =========================================================
    TURNER STRUCTURES — LEADS-FIRST (FULL FILE)
-   OPTION 1 (UPDATED): CLEAN INDUSTRIAL + NEON BLUE DOMINANT
-   Goal: More calls + quote requests (clear hierarchy + obvious click targets)
+   LIGHT + BRIGHT (NEON BLUE DOMINANT)
+   Goal: More calls + quote requests
    Palette:
-   - Background: Light (#F4F6F8)
-   - Brand (Neon Blue): #4FAAEB (dominant)
-   - Support (Navy): #1F3A5F
-   - Accent (Copper): #C47A2C (primary CTA only)
+   - Background: #F6F8FB (very light)
+   - Neon Blue: #4FAAEB (dominant)
+   - Copper: #C47A2C (primary CTA)
+   - Text: near-black (no navy wash)
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
 :root{
-  /* Brand system */
-  --neon:#4FAAEB;                  /* Turner electric blue (dominant) */
-  --neonDeep:#1EA7FF;              /* glow helper */
-  --navy:#1F3A5F;                  /* industrial anchor */
-  --accent:#C47A2C;                /* copper CTA */
+  --neon:#4FAAEB;                  /* Turner electric blue */
+  --neon2:#1EA7FF;                 /* glow helper */
+  --copper:#C47A2C;                /* primary CTA */
+  --copperGlow: rgba(196,122,44,.20);
 
-  --neonGlow: rgba(79,170,235,.22);
-  --neonGlowStrong: rgba(79,170,235,.34);
-  --accentGlow: rgba(196,122,44,.22);
+  --bg:#F6F8FB;
+  --bg2:#EEF3F8;
 
-  /* Backgrounds */
-  --bg:#F4F6F8;
-  --bg2:#EEF2F5;
-
-  /* Hero overlays (keep image readable) */
-  --heroOverlayTop: rgba(255,255,255,.70);
-  --heroOverlayBottom: rgba(255,255,255,.92);
-
-  /* Surfaces */
   --panel:#ffffff;
-  --panelSoft:#F8FAFC;
-  --panelTint: rgba(79,170,235,.08); /* neon tint */
+  --panelSoft:#FBFCFE;
 
-  /* Text */
-  --text:#14181F;
-  --muted: rgba(20,24,31,.72);
+  --text:#111827;                  /* near-black */
+  --muted: rgba(17,24,39,.72);
 
-  /* Lines */
-  --line: rgba(20,24,31,.12);
-  --lineStrong: rgba(20,24,31,.18);
-  --lineNeon: rgba(79,170,235,.45);
+  --line: rgba(17,24,39,.10);
+  --lineNeon: rgba(79,170,235,.32);
 
-  /* Shadows */
-  --shadow: 0 14px 34px rgba(15,23,42,.10);
-  --shadowStrong: 0 22px 60px rgba(15,23,42,.14);
+  --shadow: 0 14px 34px rgba(17,24,39,.10);
+  --shadowStrong: 0 22px 60px rgba(17,24,39,.14);
 
   --radius: 18px;
   --max: 1120px;
@@ -63,7 +47,7 @@ body{
   line-height: 1.55;
   background:
     radial-gradient(900px 600px at 10% 0%, rgba(79,170,235,.16), transparent 60%),
-    radial-gradient(800px 560px at 92% 14%, rgba(196,122,44,.10), transparent 62%),
+    radial-gradient(800px 560px at 92% 12%, rgba(79,170,235,.10), transparent 62%),
     linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
 }
 
@@ -71,19 +55,19 @@ a{ color:inherit; text-decoration:none; }
 .container{ width:min(var(--max), calc(100% - 36px)); margin:0 auto; }
 .hidden{ display:none; }
 .muted{ color: var(--muted); }
-code{ color: var(--navy); }
+code{ color: var(--neon2); }
 
-/* ---------- LEADS-FIRST: Make links look like links (but keep .btn clean) ---------- */
+/* Links (but keep .btn clean) */
 a:not(.btn):not(.topbar-phone){
   text-decoration: underline;
-  text-decoration-color: rgba(79,170,235,.45);
+  text-decoration-color: rgba(79,170,235,.55);
   text-underline-offset: 3px;
 }
 a:not(.btn):not(.topbar-phone):hover{
   text-decoration-color: rgba(79,170,235,.95);
 }
 
-/* Focus states (mobile + accessibility) */
+/* Focus */
 :focus-visible{
   outline: 3px solid rgba(79,170,235,.55);
   outline-offset: 3px;
@@ -95,12 +79,10 @@ a:not(.btn):not(.topbar-phone):hover{
   position: sticky;
   top: 0;
   z-index: 50;
-
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-
-  background: rgba(244,246,248,.88);
-  border-bottom: 1px solid var(--line);
+  background: rgba(246,248,251,.90);
+  border-bottom: 1px solid rgba(17,24,39,.08);
 }
 .topbar-inner{
   display:flex;
@@ -110,17 +92,19 @@ a:not(.btn):not(.topbar-phone):hover{
   gap: 12px;
 }
 
+/* Make pill LIGHT with neon trim (no navy fill) */
 .pill{
   display:flex;
   align-items:center;
   gap:10px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(79,170,235,.10);
+  background: rgba(255,255,255,.92);
   border: 1px solid rgba(79,170,235,.30);
   font-size: 14px;
-  color: var(--navy);
-  font-weight: 900;
+  color: rgba(17,24,39,.90);
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
 .dot{
   width:10px; height:10px; border-radius:50%;
@@ -130,33 +114,31 @@ a:not(.btn):not(.topbar-phone):hover{
     0 0 26px rgba(79,170,235,.18);
 }
 
-/* Phone in topbar = neon-blue framed CTA */
+/* Phone = neon button (not dark) */
 .topbar-phone{
   font-size: 14px;
   padding: 9px 14px;
   border-radius: 999px;
-  color: var(--navy);
-  background: rgba(255,255,255,.92);
-  border: 2px solid rgba(79,170,235,.55);
-  box-shadow: 0 10px 24px rgba(15,23,42,.10);
+  color:#fff;
+  background: var(--neon);
+  border: 2px solid rgba(255,255,255,.92);
+  box-shadow: 0 14px 30px rgba(79,170,235,.28);
 }
-.topbar-phone:hover{
-  background: rgba(79,170,235,.10);
-}
+.topbar-phone:hover{ filter: brightness(1.05); }
 
 /* ---------- Hero ---------- */
 .hero{
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  background: var(--bg);
+  border-bottom: 1px solid rgba(17,24,39,.08);
 }
 
+/* Light overlay so hero never gets “dark blue” */
 .hero-bg{
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, var(--heroOverlayTop), var(--heroOverlayBottom)),
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.96)),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
   filter: saturate(1.02) contrast(1.02);
 }
@@ -177,16 +159,16 @@ a:not(.btn):not(.topbar-phone):hover{
   height:auto;
   object-fit:contain;
   border-radius: 18px;
-  border: 2px solid rgba(79,170,235,.22);
+  border: 1px solid rgba(79,170,235,.24);
   background: rgba(255,255,255,.92);
-  box-shadow: 0 10px 28px rgba(15,23,42,.10);
+  box-shadow: 0 14px 34px rgba(17,24,39,.10);
 }
 .brand-text{ text-align:center; max-width: 880px; }
 .brand-sub{
   font-size: 14px;
-  color: rgba(31,58,95,.92);
+  color: rgba(17,24,39,.80);
   line-height: 1.45;
-  font-weight: 800;
+  font-weight: 700;
 }
 .brand-text .financing,
 .brand-text .financing-sub{
@@ -194,9 +176,9 @@ a:not(.btn):not(.topbar-phone):hover{
   margin: 8px 0;
   font-size: 16px;
   font-weight: 900;
-  color: rgba(20,24,31,.92);
+  color: rgba(17,24,39,.92);
 }
-.brand-text .financing-sub{ opacity: .88; }
+.brand-text .financing-sub{ opacity: .85; }
 
 /* Layout */
 .hero-grid{
@@ -206,10 +188,10 @@ a:not(.btn):not(.topbar-phone):hover{
   align-items:start;
 }
 
-/* Lead-gen readability panel */
+/* Hero panel bright + neon trim */
 .hero-copy{
-  background: rgba(255,255,255,.94);
-  border: 1px solid rgba(79,170,235,.24);
+  background: rgba(255,255,255,.96);
+  border: 2px solid rgba(79,170,235,.22);
   border-radius: 18px;
   padding: 18px 16px;
   box-shadow: var(--shadowStrong);
@@ -222,26 +204,25 @@ a:not(.btn):not(.topbar-phone):hover{
   font-size: clamp(38px, 6vw, 60px);
   line-height: 1.05;
   letter-spacing: -0.5px;
-  color: var(--navy);
+  color: rgba(17,24,39,.96);
 }
 
-/* Neon accent in headline */
+/* Neon accent = true brand moment */
 .accent{
   color: var(--neon);
-  text-shadow: 0 0 18px var(--neonGlow);
+  text-shadow: 0 0 18px rgba(79,170,235,.20);
 }
 
 .lead{
   margin: 0 0 14px;
   max-width: 760px;
-  color: rgba(20,24,31,.86);
+  color: rgba(17,24,39,.82);
   font-size: 16px;
 }
 
-/* ---------- Buttons (LEADS-FIRST) ---------- */
+/* ---------- Buttons ---------- */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: 14px 0 10px; }
 
-/* All buttons = clearly clickable + neon border */
 .btn{
   display:inline-flex;
   justify-content:center;
@@ -249,9 +230,9 @@ a:not(.btn):not(.topbar-phone):hover{
   padding: 12px 16px;
   border-radius: 14px;
 
-  border: 2px solid rgba(79,170,235,.55);
-  background: rgba(255,255,255,.92);
-  color: var(--navy);
+  border: 2px solid rgba(79,170,235,.40);
+  background: #ffffff;
+  color: rgba(17,24,39,.92);
 
   font-weight: 900;
   font-family: var(--title);
@@ -260,34 +241,35 @@ a:not(.btn):not(.topbar-phone):hover{
   transition: transform .12s ease, filter .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 .btn:hover{
-  background: rgba(79,170,235,.12);
-  box-shadow: 0 0 0 3px rgba(79,170,235,.18);
+  background: rgba(79,170,235,.10);
+  border-color: rgba(79,170,235,.65);
+  box-shadow: 0 0 0 3px rgba(79,170,235,.16);
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary = dominant action (Call/Text) uses COPPER */
+/* Primary (Call/Text) = copper */
 .btn.primary{
-  background: var(--accent);
+  background: var(--copper);
   color: #ffffff;
   border: 2px solid rgba(255,255,255,.92);
   font-size: 18px;
   padding: 14px 18px;
-  box-shadow: 0 16px 40px rgba(196,122,44,.28);
+  box-shadow: 0 16px 40px rgba(196,122,44,.26);
 }
 .btn.primary:hover{
   transform: translateY(-2px);
   filter: brightness(1.05);
-  box-shadow: 0 22px 52px rgba(196,122,44,.34);
+  box-shadow: 0 22px 52px rgba(196,122,44,.32);
 }
 
-/* Ghost = neon-driven second action */
+/* Ghost = neon secondary */
 .btn.ghost{
   background: #ffffff;
-  color: var(--navy);
+  color: rgba(17,24,39,.92);
   border: 2px solid rgba(79,170,235,.55);
 }
 .btn.ghost:hover{
-  background: rgba(79,170,235,.12);
+  background: rgba(79,170,235,.10);
 }
 
 .btn.wide{ width:100%; }
@@ -300,14 +282,15 @@ a:not(.btn):not(.topbar-phone):hover{
   max-width: 820px;
 }
 .cap{
-  background: rgba(255,255,255,.94);
-  border: 1px solid rgba(79,170,235,.22);
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(79,170,235,.20);
   border-radius: 14px;
   padding: 10px 12px;
-  color: rgba(20,24,31,.86);
+  color: rgba(17,24,39,.82);
   font-size: 14px;
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
-.cap strong{ color: var(--navy); }
+.cap strong{ color: rgba(17,24,39,.92); }
 
 /* Trust row */
 .trust-row{
@@ -320,64 +303,63 @@ a:not(.btn):not(.topbar-phone):hover{
 .trust-card{
   border-radius: 16px;
   padding: 12px 14px;
-  background: rgba(255,255,255,.94);
-  border: 1px solid rgba(79,170,235,.20);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(79,170,235,.18);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
-.trust-title{ font-size: 12px; color: rgba(20,24,31,.60); margin-bottom: 2px; }
-.trust-value{ font-weight: 900; font-size: 14px; color: rgba(20,24,31,.90); }
+.trust-title{ font-size: 12px; color: rgba(17,24,39,.60); margin-bottom: 2px; }
+.trust-value{ font-weight: 900; font-size: 14px; color: rgba(17,24,39,.92); }
 
 /* Side callout */
 .hero-side .callout{
   border-radius: 20px;
   padding: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(79,170,235,.18);
-  box-shadow: 0 14px 34px rgba(15,23,42,.10);
+  background: rgba(255,255,255,.96);
+  border: 2px solid rgba(79,170,235,.20);
+  box-shadow: var(--shadow);
 }
 .callout h3{
   margin:0 0 8px;
   font-family: var(--title);
   font-weight: 900;
-  color: var(--navy);
+  color: rgba(17,24,39,.96);
 }
-.callout p{ margin:0 0 12px; color: rgba(20,24,31,.82); }
-.small{ margin-top: 10px; font-size: 12px; color: rgba(20,24,31,.62); }
+.callout p{ margin:0 0 12px; color: rgba(17,24,39,.78); }
+.small{ margin-top: 10px; font-size: 12px; color: rgba(17,24,39,.62); }
 
 /* ---------- Sections ---------- */
 .section{ padding: 54px 0; }
 .section.alt{
   background: linear-gradient(180deg, rgba(79,170,235,.06), rgba(255,255,255,0));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(17,24,39,.08);
+  border-bottom: 1px solid rgba(17,24,39,.08);
 }
 
-/* Headings pop (neon blue = brand dominance) */
+/* Headings = neon, not navy */
 .section-head h2{
   margin:0 0 6px;
   font-family: var(--title);
   font-weight: 900;
   font-size: 28px;
-  color: var(--navy);
+  color: rgba(17,24,39,.96);
 }
-.section-head h2 strong,
-.section-head h2 .accent{ color: var(--neon); }
-.section-head p{ margin:0; color: rgba(20,24,31,.74); }
+.section-head h2 .accent{ color: var(--neon); text-shadow: 0 0 14px rgba(79,170,235,.18); }
+.section-head p{ margin:0; color: rgba(17,24,39,.72); }
 
-/* Proof */
+/* Proof section */
 #proof{
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(900px 500px at 50% -20%, rgba(79,170,235,.12), transparent 60%),
-    linear-gradient(180deg, rgba(244,246,248,1), rgba(255,255,255,1));
+    radial-gradient(900px 500px at 50% -20%, rgba(79,170,235,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg2), #ffffff);
 }
 #proof::after{
   content:"";
   position:absolute;
   left:0; right:0; top:0;
   height:2px;
-  background: linear-gradient(90deg, transparent, rgba(79,170,235,.70), transparent);
+  background: linear-gradient(90deg, transparent, rgba(79,170,235,.75), transparent);
   opacity:.95;
   pointer-events:none;
 }
@@ -394,9 +376,9 @@ a:not(.btn):not(.topbar-phone):hover{
   border-radius: 18px;
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(79,170,235,.18);
-  color: rgba(20,24,31,.90);
+  color: rgba(17,24,39,.88);
   font-weight: 700;
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
 
 .quotes{
@@ -411,10 +393,10 @@ a:not(.btn):not(.topbar-phone):hover{
   padding: 16px;
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(79,170,235,.18);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
-.quote p{ margin:0 0 8px; color: rgba(20,24,31,.88); }
-.quote footer{ color: rgba(20,24,31,.60); }
+.quote p{ margin:0 0 8px; color: rgba(17,24,39,.86); }
+.quote footer{ color: rgba(17,24,39,.60); }
 
 /* Cards */
 .cards{
@@ -428,7 +410,7 @@ a:not(.btn):not(.topbar-phone):hover{
   padding: 18px;
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(79,170,235,.18);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .card:hover{
@@ -440,7 +422,7 @@ a:not(.btn):not(.topbar-phone):hover{
 .icon{
   width:44px;height:44px;border-radius: 14px;
   display:grid; place-items:center;
-  background: rgba(79,170,235,.10);
+  background: rgba(79,170,235,.12);
   border: 1px solid rgba(79,170,235,.22);
   margin-bottom: 10px;
 }
@@ -448,10 +430,10 @@ a:not(.btn):not(.topbar-phone):hover{
   margin:0 0 8px;
   font-family: var(--title);
   font-weight: 900;
-  color: var(--navy);
+  color: rgba(17,24,39,.96);
 }
-.card p{ margin:0 0 10px; color: rgba(20,24,31,.80); }
-.card ul{ margin:0; padding-left: 18px; color: rgba(20,24,31,.74); }
+.card p{ margin:0 0 10px; color: rgba(17,24,39,.76); }
+.card ul{ margin:0; padding-left: 18px; color: rgba(17,24,39,.70); }
 
 .typical{
   margin-top: 18px;
@@ -459,13 +441,10 @@ a:not(.btn):not(.topbar-phone):hover{
   border-radius: 16px;
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(79,170,235,.18);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
-.typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color: var(--navy); }
-.typical p{ margin:0; color: rgba(20,24,31,.74); }
-
-/* Gallery base */
-.gallery{ display:grid; gap: 12px; margin-top: 16px; }
+.typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color: rgba(17,24,39,.96); }
+.typical p{ margin:0; color: rgba(17,24,39,.70); }
 
 /* Contact / Form */
 .contact{
@@ -481,18 +460,9 @@ a:not(.btn):not(.topbar-phone):hover{
   padding: 18px;
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(79,170,235,.18);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
 }
-.lead2{ margin-top: 6px; color: rgba(20,24,31,.80); }
-.mini{
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(20,24,31,.10);
-  color: rgba(20,24,31,.74);
-  font-size: 13px;
-}
-
-label{ display:block; margin-bottom: 12px; color: rgba(20,24,31,.86); font-weight: 700; }
+label{ display:block; margin-bottom: 12px; color: rgba(17,24,39,.86); font-weight: 700; }
 input, textarea{
   width:100%;
   margin-top: 6px;
@@ -502,7 +472,6 @@ input, textarea{
   background: #ffffff;
   color: var(--text);
   outline:none;
-  box-shadow: inset 0 1px 0 rgba(15,23,42,.04);
 }
 input:focus, textarea:focus{
   border-color: rgba(79,170,235,.70);
@@ -520,7 +489,7 @@ input:focus, textarea:focus{
 /* Footer */
 .footer{
   padding: 18px 0 24px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(17,24,39,.08);
   background: #ffffff;
 }
 .footer-inner{
@@ -528,7 +497,7 @@ input:focus, textarea:focus{
   justify-content:space-between;
   align-items:center;
   gap: 12px;
-  color: rgba(20,24,31,.74);
+  color: rgba(17,24,39,.70);
   font-size: 14px;
 }
 .footer-right{ display:flex; align-items:center; gap: 10px; }
@@ -549,12 +518,8 @@ input:focus, textarea:focus{
 }
 
 /* =========================================================
-   CALLS-FIRST MOBILE ACTIONS
-   Supports BOTH patterns:
-   1) .mobile-bar (2 buttons)
-   2) .mobile-call (single button)
+   CALLS-FIRST MOBILE ACTIONS (.mobile-bar + .mobile-call)
    ========================================================= */
-
 .mobile-bar,
 .mobile-call{ display:none; }
 
@@ -579,7 +544,7 @@ input:focus, textarea:focus{
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 
-    box-shadow: 0 24px 70px rgba(15,23,42,.18);
+    box-shadow: 0 24px 70px rgba(17,24,39,.14);
   }
 
   .mobile-bar__btn{
@@ -597,47 +562,14 @@ input:focus, textarea:focus{
 
     border: 2px solid rgba(79,170,235,.55);
     background: #ffffff;
-    color: var(--navy);
+    color: rgba(17,24,39,.92);
   }
 
   .mobile-bar__btn--call{
-    background: var(--accent);
+    background: var(--copper);
     color:#fff;
     border: 2px solid rgba(255,255,255,.92);
-    box-shadow: 0 14px 34px rgba(196,122,44,.26);
-  }
-
-  .mobile-bar__btn--quote:hover{
-    background: rgba(79,170,235,.12);
-    box-shadow: 0 0 0 3px rgba(79,170,235,.18);
-  }
-
-  .mobile-call{
-    position: fixed;
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 14px 16px;
-    border-radius: 16px;
-
-    font-family: var(--title);
-    font-weight: 900;
-    font-size: 18px;
-    letter-spacing: .4px;
-
-    color: #fff;
-    background: var(--accent);
-    border: 2px solid rgba(255,255,255,.92);
-    box-shadow: 0 18px 55px rgba(196,122,44,.28);
-
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 14px 34px rgba(196,122,44,.24);
   }
 
   body{ padding-bottom: 92px; }
