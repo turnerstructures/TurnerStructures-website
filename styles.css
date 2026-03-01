@@ -5,13 +5,14 @@
    - Blue-dominant site + WHITE letters
    - iPhone Safari-safe blur (webkit)
    - Cleaner panels, less noise, higher readability
+   - PHASE 1 (AGGRESSIVE): Stronger hierarchy + stronger CTAs
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
 :root{
   /* Core palette */
   --neon:#4FAAEB;                 /* MATCHED to shirt */
-  --neon2:#1EA7FF;                /* punchy electric */
+  --neon2:#1EA7FF;                /* kept for glow accents only */
   --ice:#CFEFFF;
 
   /* Base (deep professional navy, not black) */
@@ -46,7 +47,7 @@ body{
   line-height: 1.55;
   background:
     radial-gradient(900px 600px at 12% 0%, rgba(79,170,235,.18), transparent 60%),
-    radial-gradient(800px 560px at 88% 12%, rgba(30,167,255,.12), transparent 62%),
+    radial-gradient(800px 560px at 88% 12%, rgba(79,170,235,.10), transparent 62%),
     linear-gradient(180deg, var(--bg) 0%, #020a12 100%);
 }
 
@@ -88,10 +89,10 @@ code{color: var(--ice);}
 }
 .dot{
   width:10px;height:10px;border-radius:50%;
-  background: linear-gradient(135deg, var(--ice), var(--neon2));
+  background: linear-gradient(135deg, var(--ice), var(--neon));
   box-shadow:
     0 0 10px rgba(79,170,235,.55),
-    0 0 22px rgba(30,167,255,.30);
+    0 0 22px rgba(79,170,235,.30);
 }
 .topbar-phone{
   font-size: 14px;
@@ -114,9 +115,8 @@ code{color: var(--ice);}
   position: absolute;
   inset: 0;
 
-  /* ONE clean background statement = fewer ways to break it */
   background:
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.70)),
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.75)),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
 
   filter: saturate(1.02) contrast(1.03);
@@ -153,10 +153,10 @@ code{color: var(--ice);}
   display:block;
   margin: 8px 0;
   font-size: 16px;
-  font-weight: 700;
-  color: rgba(255,255,255,.90);
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
 }
-.brand-text .financing-sub{ opacity: .88; }
+.brand-text .financing-sub{ opacity: .90; }
 
 /* Layout */
 .hero-grid{
@@ -169,20 +169,20 @@ code{color: var(--ice);}
 /* Readable panel behind hero text */
 .hero-copy{
   background: var(--panel);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.14);
   border-radius: 18px;
   padding: 18px 16px;
   box-shadow: var(--shadow);
 }
 
-/* Headline hierarchy */
+/* Headline hierarchy (AGGRESSIVE) */
 .hero-copy h1{
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   font-family: var(--title);
   font-weight: 900;
-  font-size: clamp(34px, 5vw, 56px);
-  line-height: 1.10;
-  letter-spacing: -0.4px;
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
   color:#fff;
 }
 
@@ -195,7 +195,7 @@ code{color: var(--ice);}
 .lead{
   margin: 0 0 14px;
   max-width: 760px;
-  color: rgba(255,255,255,.88);
+  color: rgba(255,255,255,.90);
   font-size: 16px;
 }
 
@@ -207,28 +207,40 @@ code{color: var(--ice);}
   align-items:center;
   padding: 12px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 2px solid rgba(255,255,255,.18);
   font-weight: 900;
   font-family: var(--title);
   letter-spacing: .2px;
-  transition: transform .08s ease, filter .2s ease;
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary button */
+/* Primary button (AGGRESSIVE SOLID BRAND) */
 .btn.primary{
-  background: linear-gradient(135deg, rgba(79,170,235,.98), rgba(30,167,255,.92));
+  background: var(--neon);
   color: #ffffff;
-  border-color: rgba(255,255,255,.18);
+  border: 2px solid #ffffff;
+  font-size: 18px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 30px rgba(79,170,235,.45);
 }
-.btn.primary:hover{ filter: brightness(1.04); }
+.btn.primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(79,170,235,.60);
+  filter: brightness(1.06);
+}
 
 .btn.ghost{
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.28);
 }
-.btn.ghost:hover{ filter: brightness(1.06); }
+.btn.ghost:hover{
+  border-color: var(--neon);
+  box-shadow: 0 0 0 3px rgba(79,170,235,.16);
+  filter: brightness(1.06);
+}
+
 .btn.wide{ width:100%; }
 
 /* Capabilities strip */
@@ -240,7 +252,7 @@ code{color: var(--ice);}
 }
 .cap{
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
   border-radius: 14px;
   padding: 10px 12px;
   color: rgba(255,255,255,.92);
@@ -260,7 +272,7 @@ code{color: var(--ice);}
   border-radius: 16px;
   padding: 12px 14px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
 .trust-title{ font-size: 12px; color: rgba(255,255,255,.72); margin-bottom: 2px; }
 .trust-value{ font-weight: 900; font-size: 14px; color: rgba(255,255,255,.94); }
@@ -270,7 +282,7 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
 .callout h3{
   margin:0 0 8px;
@@ -288,21 +300,24 @@ code{color: var(--ice);}
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
+/* Section headings (AGGRESSIVE BRAND COLOR) */
 .section-head h2{
   margin:0 0 6px;
   font-family: var(--title);
   font-weight: 900;
   font-size: 28px;
-  color:#fff;
+  color: var(--neon);
+  letter-spacing: -0.2px;
 }
-.section-head p{ margin:0; color: rgba(255,255,255,.80); }
+.section-head p{ margin:0; color: rgba(255,255,255,.84); }
 
 /* ---------- Proof ---------- */
 #proof{
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(900px 500px at 50% -20%, rgba(79,170,235,.16), transparent 60%),
+    radial-gradient(900px 500px at 50% -20%, rgba(79,170,235,.18), transparent 60%),
     linear-gradient(180deg, rgba(3,16,27,.92), rgba(2,10,18,1));
 }
 #proof::after{
@@ -327,9 +342,9 @@ code{color: var(--ice);}
   padding: 16px 18px;
   border-radius: 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Quotes */
@@ -344,7 +359,7 @@ code{color: var(--ice);}
   border-radius: 18px;
   padding: 16px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
 .quote p{ margin:0 0 8px; color: rgba(255,255,255,.92); }
 .quote footer{ color: rgba(255,255,255,.70); }
@@ -360,13 +375,20 @@ code{color: var(--ice);}
   border-radius: var(--radius);
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.14);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
+.card:hover{
+  border-color: var(--neon);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+}
+
 .icon{
   width:44px;height:44px;border-radius: 14px;
   display:grid;place-items:center;
   background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
   margin-bottom: 10px;
 }
 .card h3{
@@ -375,18 +397,18 @@ code{color: var(--ice);}
   font-weight: 900;
   color:#fff;
 }
-.card p{ margin:0 0 10px; color: rgba(255,255,255,.86); }
-.card ul{ margin:0; padding-left: 18px; color: rgba(255,255,255,.80); }
+.card p{ margin:0 0 10px; color: rgba(255,255,255,.88); }
+.card ul{ margin:0; padding-left: 18px; color: rgba(255,255,255,.82); }
 
 .typical{
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 16px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
 .typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color:#fff; }
-.typical p{ margin:0; color: rgba(255,255,255,.82); }
+.typical p{ margin:0; color: rgba(255,255,255,.84); }
 
 /* ---------- Gallery ---------- */
 .gallery{
@@ -398,7 +420,7 @@ code{color: var(--ice);}
   margin:0;
   border-radius: 18px;
   overflow:hidden;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
   aspect-ratio: 4 / 3;
 }
@@ -428,14 +450,14 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
-.lead2{ margin-top: 6px; color: rgba(255,255,255,.86); }
+.lead2{ margin-top: 6px; color: rgba(255,255,255,.88); }
 .mini{
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.82);
+  color: rgba(255,255,255,.84);
   font-size: 13px;
 }
 
@@ -443,21 +465,21 @@ code{color: var(--ice);}
   border-radius: 20px;
   padding: 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
-label{ display:block; margin-bottom: 12px; color: rgba(255,255,255,.88); }
+label{ display:block; margin-bottom: 12px; color: rgba(255,255,255,.90); }
 input, textarea{
   width:100%;
   margin-top: 6px;
   padding: 12px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 2px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.08);
   color: #ffffff;
   outline:none;
 }
 input:focus, textarea:focus{
-  border-color: rgba(79,170,235,.85);
+  border-color: rgba(79,170,235,.95);
   box-shadow: 0 0 0 3px rgba(79,170,235,.18);
 }
 
@@ -466,7 +488,7 @@ input:focus, textarea:focus{
   border-radius: 18px;
   padding: 14px 16px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.12);
 }
 
 /* ---------- Footer ---------- */
@@ -500,9 +522,9 @@ input:focus, textarea:focus{
   .cta-row{ gap: 10px; }
   .hero-copy{ padding: 16px 14px; }
 }
+
 /* =========================================================
-   CALLS-FIRST: Sticky mobile Call/Text button
-   Shows only on mobile, stays out of the way on desktop
+   CALLS-FIRST: Sticky mobile Call/Text button (AGGRESSIVE)
    ========================================================= */
 
 .mobile-call{
@@ -526,18 +548,19 @@ input:focus, textarea:focus{
 
     font-family: var(--title);
     font-weight: 900;
-    letter-spacing: .2px;
+    font-size: 18px;
+    letter-spacing: .4px;
 
     color: #fff;
-    background: linear-gradient(135deg, rgba(79,170,235,.98), rgba(30,167,255,.92));
-    border: 1px solid rgba(255,255,255,.18);
-    box-shadow: 0 18px 45px rgba(0,0,0,.45);
+    background: var(--neon);
+    border: 2px solid #ffffff;
+    box-shadow: 0 18px 45px rgba(79,170,235,.55);
 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 
-  /* adds a little breathing room so button doesn't cover content */
+  /* adds breathing room so button doesn't cover content */
   body{
     padding-bottom: 80px;
   }
