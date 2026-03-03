@@ -656,3 +656,6 @@ input:focus, textarea:focus{
 
   body{ padding-bottom: 92px; }
 }
+html{ background:#4A4F55; }
+html, body{ width:100%; overflow-x:hidden; }
+img, svg, video, iframe{ max-width:100%; height:auto; }
