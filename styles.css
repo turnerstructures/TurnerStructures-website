@@ -1,46 +1,44 @@
 /* =========================================================
    TURNER STRUCTURES — LEADS-FIRST (FULL FILE)
-   LIGHT MODE + SHIRT BLUE (MORE BRAND)
-   Brand Blue (shirt): #16B5E8
-   Copper Accent:      #C47A2C
+   PERMANENT BRAND COLORS (CHARCOAL + ELECTRIC BLUE + WHITE)
+   Charcoal:      #4A4F55
+   Electric Blue: #1F7AC9
+   White:         #FFFFFF
    Goal: More calls + quote requests
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
 :root{
-  /* Primary brand blue (match work shirt) */
-  --brand:#16B5E8;
-  --brandDeep:#0FA3D4;
-  --brandGlow: rgba(22,181,232,.25);
+  /* Primary brand */
+  --charcoal:#4A4F55;
+  --charcoalDeep:#3E4349;          /* slightly darker */
+  --charcoalSoft:#525860;          /* slightly lighter */
+  --white:#FFFFFF;
 
-  /* Copper accent (CTA) */
-  --accent:#C47A2C;
-  --accentGlow: rgba(196,122,44,.22);
+  /* Electric blue */
+  --brand:#1F7AC9;
+  --brandDeep:#1662A3;
+  --brandGlow: rgba(31,122,201,.22);
 
-  /* Backgrounds */
-  --bg:#F6F9FC;
-  --bg2:#EEF5FB;          /* alt sections */
-  --white:#ffffff;
-
-  /* Text (reduce “black everywhere”) */
-  --text:#1B2330;         /* navy-charcoal */
+  /* Neutral text (on light panels) */
+  --text:#1B2330;                  /* navy-charcoal */
   --textStrong:#111827;
   --muted: rgba(27,35,48,.72);
 
   /* Lines */
-  --line: rgba(17,24,39,.10);
-  --lineStrong: rgba(17,24,39,.14);
-  --brandLine: rgba(22,181,232,.38);
-  --brandLineStrong: rgba(22,181,232,.55);
+  --line: rgba(255,255,255,.10);
+  --lineStrong: rgba(255,255,255,.16);
+  --brandLine: rgba(31,122,201,.35);
+  --brandLineStrong: rgba(31,122,201,.55);
 
   /* Panels */
   --panel: rgba(255,255,255,.92);
   --panelSoft: rgba(255,255,255,.86);
-  --tint: rgba(22,181,232,.08);
+  --tint: rgba(31,122,201,.08);
 
   /* Shadows */
-  --shadow: 0 14px 34px rgba(15,23,42,.10);
-  --shadowStrong: 0 22px 60px rgba(15,23,42,.14);
+  --shadow: 0 14px 34px rgba(0,0,0,.18);
+  --shadowStrong: 0 22px 60px rgba(0,0,0,.22);
 
   --radius: 18px;
   --max: 1120px;
@@ -52,36 +50,38 @@
 /* ---------- Base / Resets ---------- */
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
+
 body{
   font-family: var(--body);
-  color: var(--text);
+  color: var(--white);
   line-height: 1.55;
+
+  /* Charcoal-first background with subtle blue energy */
   background:
-    radial-gradient(980px 640px at 12% 0%, rgba(22,181,232,.20), transparent 62%),
-    radial-gradient(860px 620px at 88% 10%, rgba(22,181,232,.12), transparent 62%),
-    radial-gradient(900px 600px at 50% 120%, rgba(196,122,44,.08), transparent 55%),
-    linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+    radial-gradient(980px 640px at 12% 0%, rgba(31,122,201,.18), transparent 62%),
+    radial-gradient(860px 620px at 88% 10%, rgba(31,122,201,.10), transparent 62%),
+    linear-gradient(180deg, var(--charcoalDeep) 0%, var(--charcoal) 55%, var(--charcoalDeep) 100%);
 }
 
 a{ color:inherit; text-decoration:none; }
 .container{ width:min(var(--max), calc(100% - 36px)); margin:0 auto; }
 .hidden{ display:none; }
-.muted{ color: var(--muted); }
-code{ color: var(--brandDeep); }
+.muted{ color: rgba(255,255,255,.72); }
+code{ color: var(--brand); }
 
 /* Links look like links (but keep .btn clean) */
 a:not(.btn):not(.topbar-phone){
   text-decoration: underline;
-  text-decoration-color: rgba(22,181,232,.55);
+  text-decoration-color: rgba(31,122,201,.55);
   text-underline-offset: 3px;
 }
 a:not(.btn):not(.topbar-phone):hover{
-  text-decoration-color: rgba(22,181,232,.90);
+  text-decoration-color: rgba(31,122,201,.92);
 }
 
 /* Focus states */
 :focus-visible{
-  outline: 3px solid rgba(22,181,232,.55);
+  outline: 3px solid rgba(31,122,201,.55);
   outline-offset: 3px;
   border-radius: 10px;
 }
@@ -95,8 +95,8 @@ a:not(.btn):not(.topbar-phone):hover{
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 
-  background: rgba(246,249,252,.86);
-  border-bottom: 1px solid var(--line);
+  background: rgba(74,79,85,.78);
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 .topbar-inner{
   display:flex;
@@ -112,18 +112,20 @@ a:not(.btn):not(.topbar-phone):hover{
   gap:10px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(22,181,232,.10);
-  border: 2px solid rgba(22,181,232,.28);
+
+  background: rgba(255,255,255,.06);
+  border: 2px solid rgba(31,122,201,.35);
+
   font-size: 14px;
-  color: rgba(17,24,39,.85);
+  color: rgba(255,255,255,.90);
   font-weight: 800;
 }
 .dot{
   width:10px; height:10px; border-radius:50%;
   background: linear-gradient(135deg, #ffffff, var(--brand));
   box-shadow:
-    0 0 14px rgba(22,181,232,.28),
-    0 0 26px rgba(22,181,232,.16);
+    0 0 14px rgba(31,122,201,.28),
+    0 0 26px rgba(31,122,201,.16);
 }
 
 /* Phone looks like CTA (more calls) */
@@ -131,30 +133,34 @@ a:not(.btn):not(.topbar-phone):hover{
   font-size: 14px;
   padding: 9px 14px;
   border-radius: 999px;
-  color: var(--textStrong);
-  background: rgba(22,181,232,.10);
-  border: 2px solid rgba(22,181,232,.60);
-  box-shadow: 0 10px 24px rgba(15,23,42,.12);
+
+  color: var(--white);
+  background: rgba(31,122,201,.16);
+  border: 2px solid rgba(31,122,201,.60);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
 }
 .topbar-phone:hover{
-  background: rgba(22,181,232,.14);
+  background: rgba(31,122,201,.22);
 }
 
 /* ---------- Hero ---------- */
 .hero{
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  background: var(--bg);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  background: transparent;
 }
 
 .hero-bg{
   position: absolute;
   inset: 0;
+
+  /* keep your hero image, but charcoal it */
   background:
-    linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.95)),
+    linear-gradient(180deg, rgba(62,67,73,.65), rgba(74,79,85,.92)),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
-  filter: saturate(1.02) contrast(1.02);
+
+  filter: saturate(1.02) contrast(1.05);
 }
 
 .hero-inner{ position:relative; padding: 26px 0 54px; }
@@ -173,14 +179,15 @@ a:not(.btn):not(.topbar-phone):hover{
   height:auto;
   object-fit:contain;
   border-radius: 18px;
-  border: 2px solid rgba(22,181,232,.35);
-  background: rgba(255,255,255,.92);
-  box-shadow: 0 10px 28px rgba(15,23,42,.10);
+
+  border: 2px solid rgba(31,122,201,.45);
+  background: rgba(74,79,85,.62);
+  box-shadow: 0 10px 28px rgba(0,0,0,.24);
 }
 .brand-text{ text-align:center; max-width: 880px; }
 .brand-sub{
   font-size: 14px;
-  color: rgba(27,35,48,.82);
+  color: rgba(255,255,255,.82);
   line-height: 1.45;
   font-weight: 700;
 }
@@ -190,7 +197,7 @@ a:not(.btn):not(.topbar-phone):hover{
   margin: 8px 0;
   font-size: 16px;
   font-weight: 900;
-  color: rgba(17,24,39,.86);
+  color: rgba(255,255,255,.90);
 }
 .brand-text .financing-sub{ opacity: .86; }
 
@@ -204,11 +211,12 @@ a:not(.btn):not(.topbar-phone):hover{
 
 /* Lead-gen readability panel */
 .hero-copy{
-  background: var(--panel);
-  border: 2px solid rgba(22,181,232,.40);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.45);
   border-radius: 18px;
   padding: 18px 16px;
   box-shadow: var(--shadowStrong);
+  color: var(--text);
 }
 
 .hero-copy h1{
@@ -218,13 +226,14 @@ a:not(.btn):not(.topbar-phone):hover{
   font-size: clamp(38px, 6vw, 60px);
   line-height: 1.05;
   letter-spacing: -0.5px;
-  color: var(--brandDeep);
-  text-shadow: 0 12px 28px rgba(22,181,232,.18);
+
+  color: var(--textStrong);
+  text-shadow: 0 12px 28px rgba(31,122,201,.14);
 }
 
 .accent{
   color: var(--brand);
-  text-shadow: 0 0 18px rgba(22,181,232,.18);
+  text-shadow: 0 0 18px rgba(31,122,201,.18);
 }
 
 .lead{
@@ -245,8 +254,8 @@ a:not(.btn):not(.topbar-phone):hover{
   padding: 12px 16px;
   border-radius: 14px;
 
-  border: 2px solid rgba(22,181,232,.35);
-  background: rgba(22,181,232,.08);
+  border: 2px solid rgba(31,122,201,.40);
+  background: rgba(31,122,201,.10);
 
   font-weight: 900;
   font-family: var(--title);
@@ -256,30 +265,30 @@ a:not(.btn):not(.topbar-phone):hover{
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary CTA = copper */
+/* Primary CTA = Electric Blue */
 .btn.primary{
-  background: var(--accent);
+  background: var(--brand);
   color: #ffffff;
   border: 2px solid rgba(255,255,255,.92);
   font-size: 18px;
   padding: 14px 18px;
-  box-shadow: 0 16px 40px rgba(196,122,44,.28);
+  box-shadow: 0 16px 40px rgba(31,122,201,.28);
 }
 .btn.primary:hover{
   transform: translateY(-2px);
   filter: brightness(1.05);
-  box-shadow: 0 22px 52px rgba(196,122,44,.34);
+  box-shadow: 0 22px 52px rgba(31,122,201,.34);
 }
 
-/* Ghost buttons = brand blue */
+/* Ghost buttons = charcoal/white */
 .btn.ghost{
   background: #ffffff;
   color: var(--brandDeep);
-  border: 2px solid rgba(22,181,232,.60);
+  border: 2px solid rgba(31,122,201,.60);
 }
 .btn.ghost:hover{
-  background: rgba(22,181,232,.08);
-  box-shadow: 0 0 0 3px rgba(22,181,232,.14);
+  background: rgba(31,122,201,.08);
+  box-shadow: 0 0 0 3px rgba(31,122,201,.14);
 }
 
 .btn.wide{ width:100%; }
@@ -292,8 +301,8 @@ a:not(.btn):not(.topbar-phone):hover{
   max-width: 820px;
 }
 .cap{
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
   border-radius: 14px;
   padding: 10px 12px;
   color: rgba(27,35,48,.82);
@@ -312,9 +321,9 @@ a:not(.btn):not(.topbar-phone):hover{
 .trust-card{
   border-radius: 16px;
   padding: 12px 14px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 .trust-title{ font-size: 12px; color: rgba(27,35,48,.60); margin-bottom: 2px; }
 .trust-value{ font-weight: 900; font-size: 14px; color: rgba(17,24,39,.86); }
@@ -323,9 +332,10 @@ a:not(.btn):not(.topbar-phone):hover{
 .hero-side .callout{
   border-radius: 20px;
   padding: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.35);
-  box-shadow: 0 14px 34px rgba(15,23,42,.10);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,.16);
+  color: var(--text);
 }
 .callout h3{
   margin:0 0 8px;
@@ -339,9 +349,9 @@ a:not(.btn):not(.topbar-phone):hover{
 /* ---------- Sections ---------- */
 .section{ padding: 54px 0; }
 .section.alt{
-  background: linear-gradient(180deg, rgba(22,181,232,.06), rgba(255,255,255,0));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(31,122,201,.08), rgba(74,79,85,0));
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
 /* Headings pop */
@@ -350,26 +360,26 @@ a:not(.btn):not(.topbar-phone):hover{
   font-family: var(--title);
   font-weight: 900;
   font-size: 28px;
-  color: var(--brandDeep);
+  color: var(--white);
   letter-spacing: -0.2px;
-  text-shadow: 0 12px 28px rgba(22,181,232,.14);
+  text-shadow: 0 12px 28px rgba(0,0,0,.22);
 }
-.section-head p{ margin:0; color: rgba(27,35,48,.72); }
+.section-head p{ margin:0; color: rgba(255,255,255,.74); }
 
 /* Proof */
 #proof{
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(900px 500px at 50% -20%, rgba(22,181,232,.14), transparent 60%),
-    linear-gradient(180deg, rgba(246,249,252,1), rgba(255,255,255,1));
+    radial-gradient(900px 500px at 50% -20%, rgba(31,122,201,.14), transparent 60%),
+    linear-gradient(180deg, rgba(62,67,73,1), rgba(74,79,85,1));
 }
 #proof::after{
   content:"";
   position:absolute;
   left:0; right:0; top:0;
   height:2px;
-  background: linear-gradient(90deg, transparent, rgba(22,181,232,.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(31,122,201,.65), transparent);
   opacity:.95;
   pointer-events:none;
 }
@@ -384,11 +394,11 @@ a:not(.btn):not(.topbar-phone):hover{
 .bullet{
   padding: 16px 18px;
   border-radius: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
   color: rgba(17,24,39,.86);
   font-weight: 700;
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 
 .quotes{
@@ -401,9 +411,9 @@ a:not(.btn):not(.topbar-phone):hover{
   margin:0;
   border-radius: 18px;
   padding: 16px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.50); /* stronger like your screenshot */
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.50);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 .quote p{ margin:0 0 8px; color: rgba(27,35,48,.82); }
 .quote footer{ color: rgba(27,35,48,.62); }
@@ -418,13 +428,13 @@ a:not(.btn):not(.topbar-phone):hover{
 .card{
   border-radius: var(--radius);
   padding: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.30);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.30);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .card:hover{
-  border-color: rgba(22,181,232,.70);
+  border-color: rgba(31,122,201,.70);
   transform: translateY(-3px);
   box-shadow: var(--shadowStrong);
 }
@@ -432,8 +442,8 @@ a:not(.btn):not(.topbar-phone):hover{
 .icon{
   width:44px;height:44px;border-radius: 14px;
   display:grid; place-items:center;
-  background: rgba(22,181,232,.10);
-  border: 2px solid rgba(22,181,232,.22);
+  background: rgba(31,122,201,.10);
+  border: 2px solid rgba(31,122,201,.22);
   margin-bottom: 10px;
 }
 .card h3{
@@ -449,9 +459,9 @@ a:not(.btn):not(.topbar-phone):hover{
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 .typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color: var(--brandDeep); }
 .typical p{ margin:0; color: rgba(27,35,48,.72); }
@@ -470,9 +480,10 @@ a:not(.btn):not(.topbar-phone):hover{
 .contact-card{
   border-radius: 20px;
   padding: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  color: var(--text);
 }
 .lead2{ margin-top: 6px; color: rgba(27,35,48,.78); }
 .mini{
@@ -486,9 +497,10 @@ a:not(.btn):not(.topbar-phone):hover{
 .form{
   border-radius: 20px;
   padding: 18px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(22,181,232,.28);
-  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(31,122,201,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  color: var(--text);
 }
 label{ display:block; margin-bottom: 12px; color: rgba(27,35,48,.84); font-weight: 700; }
 
@@ -497,37 +509,38 @@ input, textarea{
   margin-top: 6px;
   padding: 12px 12px;
   border-radius: 12px;
-  border: 2px solid rgba(22,181,232,.28);
+  border: 2px solid rgba(31,122,201,.28);
   background: #ffffff;
   color: var(--text);
   outline:none;
-  box-shadow: inset 0 1px 0 rgba(15,23,42,.04);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.06);
 }
 input:focus, textarea:focus{
-  border-color: rgba(22,181,232,.85);
-  box-shadow: 0 0 0 3px rgba(22,181,232,.18);
+  border-color: rgba(31,122,201,.85);
+  box-shadow: 0 0 0 3px rgba(31,122,201,.18);
 }
 
 .thanks{
   margin-top: 14px;
   border-radius: 18px;
   padding: 14px 16px;
-  background: rgba(22,181,232,.08);
-  border: 2px solid rgba(22,181,232,.28);
+  background: rgba(31,122,201,.10);
+  border: 2px solid rgba(31,122,201,.28);
+  color: var(--white);
 }
 
 /* Footer */
 .footer{
   padding: 18px 0 24px;
-  border-top: 1px solid var(--line);
-  background: #ffffff;
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: rgba(62,67,73,.72);
 }
 .footer-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap: 12px;
-  color: rgba(27,35,48,.72);
+  color: rgba(255,255,255,.78);
   font-size: 14px;
 }
 .footer-right{ display:flex; align-items:center; gap: 10px; }
@@ -574,13 +587,13 @@ input:focus, textarea:focus{
     padding: 10px;
     border-radius: 18px;
 
-    background: rgba(255,255,255,.94);
-    border: 2px solid rgba(22,181,232,.35);
+    background: rgba(74,79,85,.86);
+    border: 2px solid rgba(31,122,201,.35);
 
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 
-    box-shadow: 0 24px 70px rgba(15,23,42,.18);
+    box-shadow: 0 24px 70px rgba(0,0,0,.28);
   }
 
   .mobile-bar__btn{
@@ -596,18 +609,18 @@ input:focus, textarea:focus{
     font-size: 16px;
     letter-spacing: .3px;
 
-    border: 2px solid rgba(22,181,232,.60);
+    border: 2px solid rgba(31,122,201,.60);
   }
 
-  /* Call button = copper */
+  /* Call button = brand blue (no copper) */
   .mobile-bar__btn--call{
-    background: var(--accent);
+    background: var(--brand);
     color:#fff;
     border: 2px solid rgba(255,255,255,.92);
-    box-shadow: 0 14px 34px rgba(196,122,44,.26);
+    box-shadow: 0 14px 34px rgba(31,122,201,.26);
   }
 
-  /* Quote button = blue */
+  /* Quote button = white/ghost */
   .mobile-bar__btn--quote{
     background: #ffffff;
     color: var(--brandDeep);
@@ -633,9 +646,9 @@ input:focus, textarea:focus{
     letter-spacing: .4px;
 
     color: #fff;
-    background: var(--accent);
+    background: var(--brand);
     border: 2px solid rgba(255,255,255,.92);
-    box-shadow: 0 18px 55px rgba(196,122,44,.28);
+    box-shadow: 0 18px 55px rgba(31,122,201,.28);
 
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
