@@ -2,26 +2,26 @@
    TURNER STRUCTURES — LEADS-FIRST (FULL FILE)
    PERMANENT BRAND COLORS (CHARCOAL + ELECTRIC BLUE + WHITE)
    Charcoal:      #4A4F55
-   Electric Blue: #1F7AC9
+   Electric Blue: #1F7AC9  (match logo)
    White:         #FFFFFF
    Goal: More calls + quote requests
    ========================================================= */
 
 /* ---------- Design Tokens ---------- */
 :root{
-  /* Primary brand */
+  /* Brand */
   --charcoal:#4A4F55;
-  --charcoalDeep:#3E4349;          /* slightly darker */
-  --charcoalSoft:#525860;          /* slightly lighter */
+  --charcoalDeep:#3E4349;
+  --charcoalSoft:#525860;
   --white:#FFFFFF;
 
-  /* Electric blue */
-  --brand:#1F7AC9;
-  --brandDeep:#1662A3;
+  /* Electric blue (logo match) */
+  --brand:#1F7AC9;                 /* use everywhere */
+  --brandDeep:#0F5FA8;             /* deeper hover/contrast */
   --brandGlow: rgba(31,122,201,.22);
 
-  /* Neutral text (on light panels) */
-  --text:#1B2330;                  /* navy-charcoal */
+  /* Light-surface text */
+  --text:#1B2330;
   --textStrong:#111827;
   --muted: rgba(27,35,48,.72);
 
@@ -32,8 +32,8 @@
   --brandLineStrong: rgba(31,122,201,.55);
 
   /* Panels */
-  --panel: rgba(255,255,255,.92);
-  --panelSoft: rgba(255,255,255,.86);
+  --panel: rgba(255,255,255,.94);
+  --panelSoft: rgba(255,255,255,.88);
   --tint: rgba(31,122,201,.08);
 
   /* Shadows */
@@ -51,12 +51,20 @@
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 
+html{ background: var(--charcoal); }
+
+/* iOS / mobile overflow safety */
+html, body{
+  width:100%;
+  overflow-x: clip;       /* stronger than hidden on Safari */
+  position: relative;
+}
+
 body{
   font-family: var(--body);
   color: var(--white);
   line-height: 1.55;
 
-  /* Charcoal-first background with subtle blue energy */
   background:
     radial-gradient(980px 640px at 12% 0%, rgba(31,122,201,.18), transparent 62%),
     radial-gradient(860px 620px at 88% 10%, rgba(31,122,201,.10), transparent 62%),
@@ -68,6 +76,8 @@ a{ color:inherit; text-decoration:none; }
 .hidden{ display:none; }
 .muted{ color: rgba(255,255,255,.72); }
 code{ color: var(--brand); }
+
+img, svg, video, iframe{ max-width:100%; height:auto; }
 
 /* Links look like links (but keep .btn clean) */
 a:not(.btn):not(.topbar-phone){
@@ -92,9 +102,6 @@ a:not(.btn):not(.topbar-phone):hover{
   top: 0;
   z-index: 50;
 
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-
   background: rgba(74,79,85,.78);
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
@@ -117,7 +124,7 @@ a:not(.btn):not(.topbar-phone):hover{
   border: 2px solid rgba(31,122,201,.35);
 
   font-size: 14px;
-  color: rgba(255,255,255,.90);
+  color: rgba(255,255,255,.92);
   font-weight: 800;
 }
 .dot{
@@ -155,7 +162,6 @@ a:not(.btn):not(.topbar-phone):hover{
   position: absolute;
   inset: 0;
 
-  /* keep your hero image, but charcoal it */
   background:
     linear-gradient(180deg, rgba(62,67,73,.65), rgba(74,79,85,.92)),
     url("/assets/95FAEE58-F0B0-43BB-88D0-D796D1E110A4.png") center / cover no-repeat;
@@ -211,7 +217,7 @@ a:not(.btn):not(.topbar-phone):hover{
 
 /* Lead-gen readability panel */
 .hero-copy{
-  background: rgba(255,255,255,.92);
+  background: var(--panel);
   border: 2px solid rgba(31,122,201,.45);
   border-radius: 18px;
   padding: 18px 16px;
@@ -219,6 +225,7 @@ a:not(.btn):not(.topbar-phone):hover{
   color: var(--text);
 }
 
+/* Headline */
 .hero-copy h1{
   margin: 0 0 14px;
   font-family: var(--title);
@@ -228,14 +235,57 @@ a:not(.btn):not(.topbar-phone):hover{
   letter-spacing: -0.5px;
 
   color: var(--textStrong);
-  text-shadow: 0 12px 28px rgba(31,122,201,.14);
+  text-shadow: 0 12px 28px rgba(0,0,0,.08);
 }
 
-.accent{
-  color: var(--brand);
-  text-shadow: 0 0 18px rgba(31,122,201,.18);
+/* ✅ All “blue words” match logo blue */
+.accent,
+.highlight,
+.brand-blue,
+.hero-copy h1 span,
+.hero-copy h1 em,
+.hero-copy h1 b{
+  color: var(--brand) !important;
+  text-shadow: 0 0 18px rgba(31,122,201,.12);
 }
 
+/* ✅ The line under “General Contracting |” (Residential/Commercial/Utility/Industrial)
+   Commonly gets faded via opacity. Force it to be brand blue and readable. */
+.hero-copy .subline,
+.hero-copy .roles,
+.hero-copy .segments,
+.hero-copy .industries,
+.hero-copy .service-line,
+.hero-copy .kicker,
+.hero-copy h1 + .lead,
+.hero-copy h1 + p{
+  opacity: 1 !important;
+}
+
+.hero-copy .subline,
+.hero-copy .roles,
+.hero-copy .segments,
+.hero-copy .industries,
+.hero-copy .service-line,
+.hero-copy .kicker{
+  color: var(--brand) !important;
+  font-weight: 900;
+}
+
+/* If that line is using strong/mark/etc */
+.hero-copy .subline strong,
+.hero-copy .roles strong,
+.hero-copy .segments strong,
+.hero-copy .industries strong,
+.hero-copy .service-line strong,
+.hero-copy .kicker strong,
+.hero-copy h1 + p strong{
+  color: var(--brand) !important;
+  opacity: 1 !important;
+  font-weight: 900;
+}
+
+/* Normal paragraph lead */
 .lead{
   margin: 0 0 14px;
   max-width: 760px;
@@ -246,7 +296,6 @@ a:not(.btn):not(.topbar-phone):hover{
 /* ---------- Buttons (LEADS-FIRST) ---------- */
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin: 14px 0 10px; }
 
-/* Make ALL buttons obviously clickable */
 .btn{
   display:inline-flex;
   justify-content:center;
@@ -265,7 +314,7 @@ a:not(.btn):not(.topbar-phone):hover{
 }
 .btn:active{ transform: translateY(1px); }
 
-/* Primary CTA = Electric Blue */
+/* Primary CTA */
 .btn.primary{
   background: var(--brand);
   color: #ffffff;
@@ -280,7 +329,7 @@ a:not(.btn):not(.topbar-phone):hover{
   box-shadow: 0 22px 52px rgba(31,122,201,.34);
 }
 
-/* Ghost buttons = charcoal/white */
+/* Ghost */
 .btn.ghost{
   background: #ffffff;
   color: var(--brandDeep);
@@ -354,7 +403,6 @@ a:not(.btn):not(.topbar-phone):hover{
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
-/* Headings pop */
 .section-head h2{
   margin:0 0 6px;
   font-family: var(--title);
@@ -455,6 +503,7 @@ a:not(.btn):not(.topbar-phone):hover{
 .card p{ margin:0 0 10px; color: rgba(27,35,48,.78); }
 .card ul{ margin:0; padding-left: 18px; color: rgba(27,35,48,.72); }
 
+/* Typical */
 .typical{
   margin-top: 18px;
   padding: 14px 16px;
@@ -466,7 +515,7 @@ a:not(.btn):not(.topbar-phone):hover{
 .typical h3{ margin:0 0 6px; font-family: var(--title); font-weight:900; color: var(--brandDeep); }
 .typical p{ margin:0; color: rgba(27,35,48,.72); }
 
-/* Gallery base (your carousel has its own inline CSS) */
+/* Gallery */
 .gallery{ display:grid; gap: 12px; margin-top: 16px; }
 
 /* Contact / Form */
@@ -590,9 +639,6 @@ input:focus, textarea:focus{
     background: rgba(74,79,85,.86);
     border: 2px solid rgba(31,122,201,.35);
 
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-
     box-shadow: 0 24px 70px rgba(0,0,0,.28);
   }
 
@@ -612,7 +658,6 @@ input:focus, textarea:focus{
     border: 2px solid rgba(31,122,201,.60);
   }
 
-  /* Call button = brand blue (no copper) */
   .mobile-bar__btn--call{
     background: var(--brand);
     color:#fff;
@@ -620,65 +665,19 @@ input:focus, textarea:focus{
     box-shadow: 0 14px 34px rgba(31,122,201,.26);
   }
 
-  /* Quote button = white/ghost */
   .mobile-bar__btn--quote{
     background: #ffffff;
     color: var(--brandDeep);
   }
 
-  .mobile-call{
-    position: fixed;
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 14px 16px;
-    border-radius: 16px;
-
-    font-family: var(--title);
-    font-weight: 900;
-    font-size: 18px;
-    letter-spacing: .4px;
-
-    color: #fff;
-    background: var(--brand);
-    border: 2px solid rgba(255,255,255,.92);
-    box-shadow: 0 18px 55px rgba(31,122,201,.28);
-
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+  /* iOS paint-overflow fix */
+  .mobile-bar, .mobile-call{
+    width: auto;
+    max-width: calc(100% - 24px);
+    box-sizing: border-box;
+    box-shadow: 0 14px 34px rgba(0,0,0,.22) !important;
+    transform: translateZ(0);
   }
 
   body{ padding-bottom: 92px; }
-}
-html{ background:#4A4F55; }
-html, body{ width:100%; overflow-x:hidden; }
-img, svg, video, iframe{ max-width:100%; height:auto; }
-/* ---- iOS Safari right-edge strip fix ---- */
-html, body{
-  overflow-x: clip;           /* stronger than hidden on Safari */
-  position: relative;
-}
-
-.mobile-bar, .mobile-call{
-  left: 12px;
-  right: 12px;
-  width: auto;
-  max-width: calc(100% - 24px);
-  box-sizing: border-box;
-
-  /* stop iOS “blur paint overflow” */
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-
-  /* shadows can also create paint overflow */
-  box-shadow: 0 14px 34px rgba(0,0,0,.22) !important;
-
-  /* prevent subpixel wobble */
-  transform: translateZ(0);
 }
