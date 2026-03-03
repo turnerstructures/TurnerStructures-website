@@ -659,3 +659,26 @@ input:focus, textarea:focus{
 html{ background:#4A4F55; }
 html, body{ width:100%; overflow-x:hidden; }
 img, svg, video, iframe{ max-width:100%; height:auto; }
+/* ---- iOS Safari right-edge strip fix ---- */
+html, body{
+  overflow-x: clip;           /* stronger than hidden on Safari */
+  position: relative;
+}
+
+.mobile-bar, .mobile-call{
+  left: 12px;
+  right: 12px;
+  width: auto;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
+
+  /* stop iOS “blur paint overflow” */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+
+  /* shadows can also create paint overflow */
+  box-shadow: 0 14px 34px rgba(0,0,0,.22) !important;
+
+  /* prevent subpixel wobble */
+  transform: translateZ(0);
+}
