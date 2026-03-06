@@ -571,8 +571,8 @@ a:not(.btn):not(.topbar-phone):hover{
   margin-top: 18px;
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255,255,255,.94);
-  border: 2px solid rgba(39,183,255,.34);
+  background: rgba(255,255,255,.06);
+  border: 2px solid rgba(31,122,201,.35);
   box-shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 
@@ -581,25 +581,19 @@ a:not(.btn):not(.topbar-phone):hover{
   font-family: var(--title);
   font-weight:900;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0,0,0,.18);
 }
 
 .typical p{
   margin:0;
-  color: #1b2330 !important;
-  font-weight: 800;
-  line-height: 1.7;
+  color: #ffffff !important;
+  font-weight:700;
   opacity: 1 !important;
+  line-height: 1.7;
 }
 
-.typical,
 .typical *{
-  text-shadow: none;
-}
-
-.typical strong,
-.typical b{
-  color: #111827 !important;
+  color:#ffffff !important;
+  opacity:1 !important;
 }
 
 /* Gallery */
