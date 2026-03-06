@@ -3,23 +3,19 @@
 <head>
   <!-- =========================================================
     TURNER STRUCTURES - LEADS-FIRST LOCAL SEO (SINGLE FILE)
-    MATCH GOOGLE: Primary = Concrete Contractor
-    Secondary = Metal Structures + General Contractor
-    Trust = Licensed/Bonded/Insured + City Gas Company Vendor
+    Primary = Concrete Contractor
+    Secondary = Metal Structures + General Contracting
+    Layout = Proof first, brand second, CTA throughout
   ========================================================== -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- TITLE: Match Google intent (Concrete Contractor first) -->
   <title>Concrete Contractor in Texarkana, TX | Metal Structures + General Contracting | Turner Structures</title>
 
-  <!-- META DESCRIPTION: Mirrors Google + website messaging -->
   <meta name="description" content="Turner Structures is a licensed, bonded & insured Concrete Contractor in Texarkana, TX serving Texarkana, AR and surrounding areas. Concrete construction for residential, commercial, utility & industrial projects plus metal structures and general contracting. City gas company vendor. Call/Text 903-280-4458." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="google-site-verification" content="TU9zzTzZS4707aGvmaSBe1Cz-t1CX75BvWlzOEGxTqk" />
-
-  <!-- CANONICAL: match your live domain style -->
   <link rel="canonical" href="https://turnerstructuresco.com/" />
 
   <meta name="geo.region" content="US-TX" />
@@ -31,7 +27,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://turnerstructuresco.com/" />
   <meta property="og:title" content="Concrete Contractor in Texarkana, TX | Turner Structures" />
-  <meta property="og:description" content="Licensed, bonded & insured Concrete Contractor in Texarkana, TX. Concrete construction (residential, commercial, utility & industrial) plus metal structures and general contracting. City gas company vendor. Call/Text 903-280-4458." />
+  <meta property="og:description" content="Licensed, bonded & insured Concrete Contractor in Texarkana, TX. Concrete construction for residential, commercial, utility & industrial projects plus metal structures and general contracting. City gas company vendor. Call/Text 903-280-4458." />
   <meta property="og:image" content="https://turnerstructuresco.com/assets/9830B1AF-6185-4C86-9664-BF6EA650988A.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -42,12 +38,211 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="/styles.css?v=10" />
+  <!-- Your main CSS -->
+  <link rel="stylesheet" href="/styles.css?v=11" />
 
-  <!-- ===== Gallery Carousel styles (Swipe on mobile, buttons on desktop) ===== -->
   <style>
-    .gallery-carousel{ position:relative; margin-top:16px; }
+    :root{
+      --bg:#03101b;
+      --bg2:#071827;
+      --panel:rgba(255,255,255,.05);
+      --panel-border:rgba(255,255,255,.10);
+      --text:#f5f8fc;
+      --muted:rgba(255,255,255,.78);
+      --accent:#21a3ff;
+      --accent2:#73d8ff;
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+      --radius:22px;
+    }
+
+    html { scroll-behavior:smooth; }
+
+    * { box-sizing:border-box; }
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(32,127,255,.15), transparent 32%),
+        linear-gradient(180deg, #03101b 0%, #081a2a 100%);
+    }
+
+    img{ max-width:100%; display:block; }
+
+    a{ color:inherit; }
+
+    .container{
+      width:min(1180px, calc(100% - 28px));
+      margin-inline:auto;
+    }
+
+    h1,h2,h3{
+      font-family:"Montserrat",sans-serif;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(3,16,27,.84);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:10px 0;
+    }
+
+    .pill{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      font-size:.95rem;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(180deg,var(--accent2),var(--accent));
+      box-shadow:0 0 0 6px rgba(33,163,255,.12);
+      flex:0 0 10px;
+    }
+
+    .topbar-phone{
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .section{
+      padding:76px 0;
+    }
+
+    .section.alt{
+      background:rgba(255,255,255,.03);
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:920px;
+      margin:0 auto 28px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(1.8rem, 3.5vw, 2.7rem);
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:800;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn.primary{
+      background:#fff;
+      color:#093f7d;
+      border-color:#fff;
+    }
+
+    .btn.ghost{
+      color:#fff;
+      background:rgba(255,255,255,.08);
+    }
+
+    .btn.wide{
+      width:100%;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    /* ===== Gallery first ===== */
+    .gallery-hero{
+      padding:44px 0 28px;
+    }
+
+    .gallery-hero-copy{
+      max-width:980px;
+      margin:0 auto 24px;
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      color:#dff1ff;
+      font-size:.82rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .gallery-hero-copy h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4.8vw, 4.2rem);
+      line-height:1.02;
+    }
+
+    .gallery-hero-copy p{
+      max-width:850px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:1.08rem;
+    }
+
+    .hero-cta{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    /* ===== Carousel ===== */
+    .gallery-carousel{
+      position:relative;
+      margin-top:18px;
+    }
 
     .g-track{
       display:flex;
@@ -58,7 +253,10 @@
       -webkit-overflow-scrolling:touch;
       padding:8px 4px 12px;
     }
-    .g-track::-webkit-scrollbar{ display:none; }
+
+    .g-track::-webkit-scrollbar{
+      display:none;
+    }
 
     .g-slide{
       scroll-snap-align:center;
@@ -69,18 +267,14 @@
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
+      box-shadow:var(--shadow);
     }
 
     .g-slide img{
       width:100%;
-      height:360px;
+      height:420px;
       object-fit:cover;
       display:block;
-    }
-
-    .g-slide--contain img{
-      object-fit:contain;
-      background:rgba(0,0,0,.18);
     }
 
     .g-btn{
@@ -102,23 +296,376 @@
       backdrop-filter:blur(10px);
       z-index:2;
     }
+
     .g-btn.prev{ left:6px; }
     .g-btn.next{ right:6px; }
+
+    /* ===== Brand banner ===== */
+    .brand-banner{
+      padding-top:18px;
+      padding-bottom:76px;
+    }
+
+    .brand-panel{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      background:
+        radial-gradient(circle at center, rgba(97,199,255,.16), transparent 28%),
+        linear-gradient(180deg, #1494ff 0%, #0a77e0 36%, #0763c4 62%, #044e9d 100%);
+    }
+
+    .brand-panel::before,
+    .brand-panel::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      height:2px;
+      background:linear-gradient(90deg, transparent 0%, rgba(157,248,255,.95) 14%, transparent 50%, rgba(157,248,255,.95) 86%, transparent 100%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .brand-panel::before{ top:112px; }
+    .brand-panel::after{ bottom:110px; }
+
+    .brand-panel-inner{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      padding:48px 24px 42px;
+    }
+
+    .brand-kicker{
+      color:#edf8ff;
+      font-size:.9rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .brand-logo{
+      width:min(100%, 860px);
+      margin:0 auto 16px;
+      filter:drop-shadow(0 10px 22px rgba(0,0,0,.28));
+    }
+
+    .brand-phone{
+      display:inline-block;
+      font-family:"Montserrat",sans-serif;
+      font-weight:900;
+      font-size:clamp(2.2rem, 7vw, 5.2rem);
+      line-height:1;
+      color:#fff;
+      text-decoration:none;
+      margin:8px 0 18px;
+      text-shadow:0 10px 24px rgba(0,0,0,.22);
+    }
+
+    .service-lines{
+      display:grid;
+      gap:10px;
+      justify-items:center;
+      margin:8px 0 24px;
+      color:#fff;
+    }
+
+    .service-lines .line-main{
+      font-family:"Montserrat",sans-serif;
+      font-weight:900;
+      font-size:clamp(1.2rem, 3vw, 2rem);
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+
+    .service-lines .line-sub{
+      font-family:"Montserrat",sans-serif;
+      font-weight:800;
+      font-size:clamp(1rem, 2vw, 1.45rem);
+      text-transform:uppercase;
+    }
+
+    .service-lines .line-small{
+      font-size:clamp(.96rem, 1.8vw, 1.15rem);
+      font-weight:700;
+      color:#eef8ff;
+    }
+
+    .brand-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    .brand-note{
+      margin-top:18px;
+      color:rgba(255,255,255,.90);
+      font-weight:600;
+    }
+
+    /* ===== Cards ===== */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--panel-border);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:1.16rem;
+    }
+
+    .card p{
+      color:var(--muted);
+    }
+
+    .card ul{
+      margin:12px 0 0;
+      padding-left:18px;
+      color:#fff;
+    }
+
+    .icon{
+      font-size:1.8rem;
+      margin-bottom:10px;
+    }
+
+    .typical{
+      margin-top:24px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:20px;
+      color:var(--muted);
+    }
+
+    .typical h3{
+      margin-top:0;
+      color:#fff;
+    }
+
+    /* ===== Proof ===== */
+    .bullets{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .bullet{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:16px 18px;
+      color:#fff;
+    }
+
+    .quotes{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .quote{
+      margin:0;
+      padding:22px;
+      border-radius:18px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+    }
+
+    .quote p{ margin:0 0 10px; }
+
+    .quote footer{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* ===== Quote section ===== */
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .contact-card,
+    .form{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .lead2{ color:var(--muted); }
+
+    .mini{
+      margin-top:18px;
+      display:grid;
+      gap:10px;
+      color:#fff;
+    }
+
+    .form label{
+      display:grid;
+      gap:8px;
+      margin-bottom:14px;
+      color:#fff;
+      font-weight:600;
+    }
+
+    .form input,
+    .form textarea{
+      width:100%;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      padding:12px 14px;
+      font:inherit;
+    }
+
+    .form input::placeholder,
+    .form textarea::placeholder{
+      color:rgba(255,255,255,.52);
+    }
+
+    .hidden{
+      position:absolute !important;
+      left:-9999px !important;
+    }
+
+    .small{ font-size:.94rem; }
+    .muted{ color:var(--muted); }
+
+    .authority-box{
+      max-width:980px;
+      margin:0 auto;
+      text-align:center;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:24px 0 90px;
+      background:rgba(0,0,0,.14);
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+    }
+
+    .footer-right{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .footer a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .sep{ color:rgba(255,255,255,.35); }
+
+    .mobile-bar{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      padding:12px;
+      background:rgba(3,16,27,.92);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-top:1px solid rgba(255,255,255,.08);
+      z-index:70;
+    }
+
+    .mobile-bar__btn{
+      min-height:50px;
+      border-radius:14px;
+      font-weight:900;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:10px 12px;
+    }
+
+    .mobile-bar__btn--call{
+      background:#fff;
+      color:#093d79;
+    }
+
+    .mobile-bar__btn--quote{
+      background:rgba(255,255,255,.1);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+    }
 
     @media (max-width:900px){
       .g-btn{ display:none; }
       .g-slide{ flex-basis:92%; max-width:92%; }
       .g-slide img{ height:320px; }
+      .cards,
+      .bullets,
+      .quotes,
+      .contact{
+        grid-template-columns:1fr;
+      }
+      .brand-panel-inner{
+        padding:38px 18px 32px;
+      }
+      .brand-panel::before{ top:88px; }
+      .brand-panel::after{ bottom:82px; }
+      .topbar-inner{ justify-content:center; }
     }
+
     @media (min-width:901px){
-      .g-slide{ flex-basis:520px; max-width:520px; }
-      .g-slide img{ height:340px; }
+      .g-slide{ flex-basis:620px; max-width:620px; }
+      .g-slide img{ height:400px; }
+    }
+
+    @media (min-width:1024px){
+      .mobile-bar{ display:none; }
+      .footer{ padding-bottom:24px; }
     }
   </style>
 
   <!-- =========================================================
       SCHEMA: WebSite + LocalBusiness + FAQPage
-      Match Google: Concrete Contractor + service mix
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -228,111 +775,123 @@
     </div>
   </div>
 
-  <header class="hero" id="top">
-    <div class="hero-bg"></div>
-    <div class="container hero-inner">
-      <div class="brand">
-        <img
-          src="assets/2F919E19-7A3D-48BF-9026-DF70BAEDE2B4.png"
-          alt="Turner Structures - Concrete Contractor in Texarkana TX - Metal Structures - General Contracting"
-          class="brand-logo"
-          loading="eager"
-          decoding="async"
-        >
-        <div class="brand-text">
-          <div class="brand-sub hero-services">
-            Concrete Contractor | Metal Structures | General Contracting<br>
-            Texarkana TX/AR + Surrounding Areas<br>
-            <span class="muted">City Gas Company Vendor (Utility & Industrial Support)</span>
-          </div>
-          <span class="financing">• Flexible Financing Available</span>
-          <span class="financing-sub">• Loans up to $100,000 for Qualified Projects</span>
+  <!-- ===== PROOF FIRST ===== -->
+  <section class="gallery-hero" id="top">
+    <div class="container">
+      <div class="gallery-hero-copy">
+        <span class="eyebrow">Concrete Contractor in Texarkana, TX</span>
+        <h1>Real projects. Real work. Built for jobs that need to last.</h1>
+        <p>
+          Turner Structures provides concrete construction, metal structures, and general contracting for residential,
+          commercial, utility, and industrial projects across Texarkana, TX, Texarkana, AR, and surrounding areas.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="tel:9032804458">Call/Text 903-280-4458</a>
+          <a class="btn ghost" href="#quote">Request a Quote</a>
+          <a class="btn ghost" href="#services">View Services</a>
         </div>
       </div>
 
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <!-- H1: Matches Google (Concrete Contractor) while keeping your broader services -->
-          <h1>
-            Concrete Contractor in <span class="accent">Texarkana, TX |</span><br />
-            Metal Structures & General Contracting |<br />
-            <span class="muted">Residential | Commercial | Utility | Industrial</span>
-          </h1>
+      <div class="gallery-carousel" aria-label="Project photos carousel">
+        <button class="g-btn prev" type="button" aria-label="Previous photo">‹</button>
 
-          <!-- Lead: says “concrete construction” (bigger than “slabs”) + versatility -->
-          <p class="lead">
-            Turner Structures is <strong>licensed, insured & bonded</strong> and serves <strong>Texarkana, TX</strong>, Texarkana, AR and surrounding areas.
-            We deliver <strong>concrete construction</strong> for <strong>residential, commercial, utility & industrial</strong> projects, plus
-            <strong>metal structures</strong> (shops, offices, barndominiums, garages, lean-tos, awnings, RV covers, equipment storage, horse barns, greenhouses and more)
-            and <strong>general contracting</strong>.
-            <span class="muted">City gas company vendor for field-ready support.</span>
-          </p>
+        <div class="g-track" tabindex="0">
+          <figure class="g-slide">
+            <img src="assets/IMG_0518.jpeg" alt="Concrete and construction project photo in Texarkana TX by Turner Structures" loading="eager" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_0683.jpeg" alt="General contractor project in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9656.jpeg" alt="Texarkana metal structures and construction work by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9743.jpeg" alt="Metal building project photo in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_8618.jpeg" alt="Texarkana concrete project by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9181.png" alt="Utility and industrial infrastructure support work in Texarkana by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_8534.png" alt="Texarkana construction and metal structures project by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_9239.jpeg" alt="Texarkana contractor project photo by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_0141.jpeg" alt="Concrete pads and flatwork in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/IMG_0865.jpeg" alt="Metal structures and construction work in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+          <figure class="g-slide">
+            <img src="assets/1235888185353557109.jpeg" alt="Texarkana construction project by Turner Structures" loading="lazy" decoding="async">
+          </figure>
+        </div>
 
-          <div class="cta-row">
-            <a class="btn primary" href="tel:9032804458">Call/Text 903-280-4458</a>
+        <button class="g-btn next" type="button" aria-label="Next photo">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND / CTA SECOND ===== -->
+  <section class="brand-banner">
+    <div class="container">
+      <div class="brand-panel">
+        <div class="brand-panel-inner">
+          <div class="brand-kicker">Commercial &amp; Industrial Contractor</div>
+
+          <img
+            src="assets/2F919E19-7A3D-48BF-9026-DF70BAEDE2B4.png"
+            alt="Turner Structures logo"
+            class="brand-logo"
+            loading="eager"
+            decoding="async"
+          >
+
+          <a class="brand-phone" href="tel:9032804458">903-280-4458</a>
+
+          <div class="service-lines">
+            <div class="line-main">Concrete Construction | Metal Structures</div>
+            <div class="line-sub">General Contracting</div>
+            <div class="line-small">Licensed | Insured | Bonded</div>
+            <div class="line-small">Texarkana TX/AR + Surrounding Areas</div>
+            <div class="line-small">City Gas Company Vendor (Utility &amp; Industrial Support)</div>
+          </div>
+
+          <div class="brand-actions">
+            <a class="btn primary" href="tel:9032804458">Call Now</a>
             <a class="btn ghost" href="#quote">Request a Quote</a>
             <a class="btn ghost" href="/concrete-contractor-texarkana.html">Concrete Construction</a>
             <a class="btn ghost" href="/metal-buildings-texarkana.html">Metal Structures</a>
-            <!-- Projects link fixed: points to gallery section instead of missing /projects.html -->
-            <a class="btn ghost" href="#gallery">Project Photos</a>
           </div>
 
-          <div class="cap-strip" aria-label="Capabilities">
-            <div class="cap"><strong>Primary:</strong> Concrete Construction • Metal Structures • General Contracting</div>
-            <div class="cap"><strong>Concrete:</strong> Residential • Commercial • Utility • Industrial</div>
-            <div class="cap"><strong>Service Area:</strong> Texarkana TX/AR + Surrounding Areas</div>
-          </div>
-
-          <div class="trust-row">
-            <div class="trust-card">
-              <div class="trust-title">Fast Estimates</div>
-              <div class="trust-value">Clear scope • fair pricing</div>
-            </div>
-            <div class="trust-card">
-              <div class="trust-title">Built to Last</div>
-              <div class="trust-value">Quality • safety-first</div>
-            </div>
-            <div class="trust-card">
-              <div class="trust-title">Vendor Experience</div>
-              <div class="trust-value">Utility/industrial support</div>
-            </div>
-          </div>
-
-          <p class="cityline">
-            <strong>Local areas served:</strong>
-            Texarkana TX/AR, New Boston, DeKalb, Wake Village, Nash, Redwater, Hooks, Atlanta, Maud, Queen City, Genoa, Fouke, Foreman, Ashdown, Fulton, Hope, Hot Springs
-            <span class="muted">and surrounding areas.</span>
-          </p>
-        </div>
-
-        <div class="hero-side">
-          <div class="callout">
-            <h3>Need an estimate?</h3>
-            <p>Call/text now or send a quick quote request.</p>
-            <a class="btn primary wide" href="tel:9032804458">Call 903-280-4458</a>
-            <div class="small">Texarkana TX/AR + Surrounding Areas</div>
+          <div class="brand-note">
+            Fast estimates • clear communication • quality execution
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Concrete Construction, Metal Structures & General Contracting in Texarkana, TX</h2>
-        <p>Clear communication, responsive scheduling, and clean execution for residential, commercial, utility & industrial work.</p>
+        <h2>Concrete Construction, Metal Structures &amp; General Contracting in Texarkana, TX</h2>
+        <p>Clear communication, responsive scheduling, and clean execution for residential, commercial, utility, and industrial work.</p>
       </div>
 
       <div class="cards">
         <article class="card" id="concrete">
           <div class="icon" aria-hidden="true">🧱</div>
-          <h3>Concrete Construction (Residential • Commercial • Utility • Industrial)</h3>
+          <h3>Concrete Construction</h3>
           <p>From site-ready prep to placement and finishing, we handle concrete work built for real use, real loads, and real timelines.</p>
           <ul>
             <li>Slabs, pads, flatwork, equipment pads</li>
-            <li>Commercial and industrial-grade concrete work</li>
-            <li>Surface prep, finishing + optional coatings</li>
+            <li>Residential, commercial, utility, and industrial concrete work</li>
+            <li>Surface prep, finishing, and optional coatings</li>
           </ul>
           <p style="margin-top:12px;">
             <a class="btn ghost" href="/concrete-contractor-texarkana.html">Concrete Construction in Texarkana →</a>
@@ -341,12 +900,12 @@
 
         <article class="card" id="structures">
           <div class="icon" aria-hidden="true">🏗️</div>
-          <h3>Metal Structures (More than “shops”)</h3>
-          <p>Versatile metal structures designed for how you actually use the space.</p>
+          <h3>Metal Structures</h3>
+          <p>Versatile metal structures designed around how the space will actually be used.</p>
           <ul>
-            <li>Shops, garages, offices, barndominiums</li>
-            <li>Lean-tos, awnings, RV covers, equipment storage</li>
-            <li>Horse barns, greenhouses, custom builds</li>
+            <li>Shops, garages, offices, and barndominiums</li>
+            <li>Lean-tos, awnings, RV covers, and equipment storage</li>
+            <li>Horse barns, greenhouses, and custom builds</li>
           </ul>
           <p style="margin-top:12px;">
             <a class="btn ghost" href="/metal-buildings-texarkana.html">Metal Structures in Texarkana →</a>
@@ -355,12 +914,12 @@
 
         <article class="card" id="utility">
           <div class="icon" aria-hidden="true">⚡</div>
-          <h3>Utility & Industrial Support (City Gas Company Vendor)</h3>
+          <h3>Utility &amp; Industrial Support</h3>
           <p>Field-ready support for installs, repairs, upgrades, and jobsite coordination when schedules matter.</p>
           <ul>
             <li><strong>City gas company vendor</strong></li>
-            <li>Site-ready concrete & construction</li>
-            <li>Custom metal structures, shops, offices, awnings</li>
+            <li>Site-ready concrete and construction support</li>
+            <li>Custom metal structures, shops, offices, and awnings</li>
           </ul>
         </article>
       </div>
@@ -368,7 +927,7 @@
       <div class="typical">
         <h3>Typical projects</h3>
         <p>
-          Concrete Construction | Commercial Concrete | Utility & Industrial Concrete | Slabs & Pads | Flatwork | Equipment Pads |
+          Concrete Construction | Commercial Concrete | Utility &amp; Industrial Concrete | Slabs &amp; Pads | Flatwork | Equipment Pads |
           Metal Structures | Shops | Garages | RV Covers | Awnings | Storage | Site Prep | Trenching | Conduit | Coatings
         </p>
       </div>
@@ -379,7 +938,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Why Texarkana trusts Turner Structures</h2>
-        <p>Trust is built with results and communication. Here’s what we deliver:</p>
+        <p>Trust gets built with results, communication, and jobs finished the right way.</p>
       </div>
 
       <div class="bullets">
@@ -398,68 +957,6 @@
           <p>“Quality workmanship and the job was done right. Highly recommend.”</p>
           <footer>— Customer</footer>
         </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY (Carousel) -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="section-head">
-        <h2>Project photos</h2>
-        <p>Swipe on mobile or click next/prev on desktop.</p>
-      </div>
-
-      <div class="gallery-carousel" aria-label="Project photos carousel">
-        <button class="g-btn prev" type="button" aria-label="Previous photo">‹</button>
-
-        <div class="g-track" tabindex="0">
-          <figure class="g-slide">
-            <img src="assets/IMG_0518.jpeg" alt="Concrete and construction project photo in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_0683.jpeg" alt="General contractor project in Texarkana TX - concrete and construction by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_9656.jpeg" alt="Texarkana metal structures and construction work by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_9743.jpeg" alt="Metal building project photo in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_8618.jpeg" alt="Texarkana concrete project by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_9181.png" alt="Utility and industrial infrastructure support work in Texarkana by Turner Structures (city gas vendor)" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_8534.png" alt="Texarkana construction and metal structures project by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_9239.jpeg" alt="Texarkana contractor project photo by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_0141.jpeg" alt="Concrete pads and flatwork in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/IMG_0865.jpeg" alt="Metal structures and construction work in Texarkana TX by Turner Structures" loading="lazy" decoding="async">
-          </figure>
-
-          <figure class="g-slide">
-            <img src="assets/1235888185353557109.jpeg" alt="Texarkana construction project - Turner Structures concrete and metal structures" loading="lazy" decoding="async">
-          </figure>
-        </div>
-
-        <button class="g-btn next" type="button" aria-label="Next photo">›</button>
       </div>
     </div>
   </section>
@@ -518,24 +1015,22 @@
     </div>
   </section>
 
-  <!-- Authority block -->
   <section class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="authority-box">
         <h2>Concrete Contractor in Texarkana, TX (and Surrounding Areas)</h2>
         <p>
-          Turner Structures is a licensed, bonded and insured <strong>Concrete Contractor in Texarkana, TX</strong>.
-          We provide <strong>concrete construction</strong> for <strong>residential, commercial, utility & industrial</strong> projects, plus
-          <strong>metal structures</strong> and <strong>general contracting</strong>.
-          City gas company vendor for utility and industrial support.
-          Call or text <strong>903-280-4458</strong> today.
+          Turner Structures is a licensed, bonded, and insured <strong>Concrete Contractor in Texarkana, TX</strong>.
+          We provide <strong>concrete construction</strong> for <strong>residential, commercial, utility, and industrial</strong> projects,
+          plus <strong>metal structures</strong> and <strong>general contracting</strong>. We serve Texarkana, TX, Texarkana, AR,
+          and surrounding communities with dependable field-ready support.
         </p>
 
-        <div class="cta-row" style="margin-top:14px;">
+        <div class="cta-row" style="margin-top:14px; justify-content:center;">
           <a class="btn primary" href="tel:9032804458">Call/Text 903-280-4458</a>
           <a class="btn ghost" href="/concrete-contractor-texarkana.html">Concrete Construction</a>
           <a class="btn ghost" href="/metal-buildings-texarkana.html">Metal Structures</a>
-          <a class="btn ghost" href="#gallery">Project Photos</a>
+          <a class="btn ghost" href="#top">Back to Top</a>
         </div>
       </div>
     </div>
@@ -553,14 +1048,13 @@
         <span class="sep">•</span>
         <a href="/metal-buildings-texarkana.html">Metal Structures</a>
         <span class="sep">•</span>
-        <a href="#gallery">Photos</a>
+        <a href="#top">Top</a>
         <span class="sep">•</span>
         <a href="https://www.facebook.com/turnerstructures" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile quick actions (2 buttons) -->
   <div class="mobile-bar" role="navigation" aria-label="Quick actions">
     <a class="mobile-bar__btn mobile-bar__btn--call" href="tel:9032804458" aria-label="Call or text Turner Structures in Texarkana">
       Call/Text
